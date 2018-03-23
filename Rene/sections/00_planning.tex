@@ -1,45 +1,50 @@
 \section{Planning tasks}
+In this section, we will briefly discuss the planning of the research. Figure \ref{fig:planning} pictures the intended planning. The first 7 weeks are planned for writing the proposal. This period knows two deadlines at the end of week 14 and 16. The first deadline is the deadline for the draft proposal and the second the deadline for the final proposal. During this period not that much time can be spent on the actual research due to other obligations. 
 
-In this section we will shortly discuss the planning of the study. The study has been split into six parts, as can be seen in the table below. Note that this planning is merely meant as a guideline, and is not set in stone.
+The remainder of the time the actual research will be carried out. During this period, more time can be spent per week in comparison to the proposal period. The research period is defined in time per RQ. The first and last RQs are more theory based and therefore probably cost less time than RQ 2 which is more practical. During RQ 2 there is also a holiday planned where no time will be spent on this research. 
 
-More examples on how to do a planning table you can see in \url{http://www.martin-kumm.de/wiki/doku.php?id=Projects:A_LaTeX_package_for_gantt_plots}
+Finally, a week to finalize the entire research is planned. This period is intended as a buffer in case some parts of the research are going less prosperous than intended. 
 
 
+\begin{figure}
+\centering
+%
 \noindent\resizebox{0.48\textwidth}{!}{
-\begin{gantt}[xunitlength=0.5cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{13}{18} %(1)lines (2) columns
+\begin{gantt}[xunitlength=0.5cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{10}{19} %(1)lines (2) columns
  
     \begin{ganttitle} %Month
-      \titleelement{June}{4}
-      \titleelement{July}{4}
-      \titleelement{August}{4}
-     \titleelement{September}{4}
-     \titleelement{October}{2} 
+      \titleelement{March}{4}
+      \titleelement{April}{4}
+      \titleelement{May}{4}
+     \titleelement{June}{4}
+     \titleelement{Juli}{3} 
     \end{ganttitle}
    
     \begin{ganttitle} % Week number
-      \numtitle{23}{1}{40}{1}
+      \numtitle{9}{1}{27}{1}
     \end{ganttitle}
 
-    \ganttbar{Proposal}{0}{2}
+    \ganttbar{Proposal}{0}{7}
     
-    \ganttgroup{Rel. Work}{2}{5}
-    \ganttbar{task 2}{2}{2}
-    \ganttbarcon[pattern=crosshatch,color=blue]{task 3}{4}{1} %(1)start point; (2) number of weeks
-    \ganttbarcon{task 4}{5}{2}  
+    \ganttgroup{RQs}{8}{10}
+    \ganttbar{RQ 1}{8}{2}
+    \ganttbar{RQ 2}{10}{3}
+    \ganttbar{RQ 3}{13}{3}
+    %\ganttbarcon[pattern=crosshatch,color=blue]{task 3}{4}{1} %(1)start point; (2) number of weeks
+    %\ganttbarcon{task 4}{5}{2}  
 %    \ganttcon{5}{5}{6}{6} %(1)vertical bar 
 
-   \ganttgroup{Holidays*}{7}{3}
-
-   \ganttgroup{Analysis}{10}{6}
-   \ganttbar{task 5}{10}{2}
-    \ganttbarcon[color=red]{task 6}{12}{2}
-    \ganttbarcon{task 7}{14}{2}
+   \ganttbar[color=red]{Holidays}{14}{1}
+	\ganttbar{Finalisation}{16}{1}
+  
     
-    \ganttmilestone{Deadline}{17}
+    \ganttmilestone{Deadlines}{6}
+    \addtocounter{ganttnum}{1}
+    \ganttmilestone{}{8}
+    \addtocounter{ganttnum}{1}
+    \ganttmilestone{}{18}
   \end{gantt}
 }
+\caption{Planning of this research.}
+\end{figure}\label{fig:planning}
 
-
-The research topics part consists solely of a literature study that focuses on ... All relevant information learned from this will be integrated in a survey that will form the first part of the thesis.
-
-Following the research topics are each of the research questions, with time allotted at the end of each research question to integrate the results into the thesis. 

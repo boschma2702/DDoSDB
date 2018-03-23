@@ -1,16 +1,26 @@
 \section{Introduction} \label{sec:introduction}
-a Denial of Service (DoS) attack is an attack that aims to disable the service a target supplies. There are two main types of DoS attacks: \textit{Vulnerability DoS} and \textit{Flood DoS} \cite{Lin2013}. A Vulnerability DoS aims to exploit a vulnerability of the target system to reduce performance or render it useless. An example of such an attack is to send a malformed messages to the target machines which can not deal with this message and as a result crashes. A Flood DoS attack on the other hand tries to exhaust the resources of the target. An example of such an attack is to fill the entire bandwidth of the target with messages of the attacker. The attacker can accomplish such speeds by using multiple machines to produces traffic. When multiple machines are used in the attack, the attack is called a Distributed Denial of Service (DDoS) attack.  
+A Denial of Service (DoS) attack is an attack that aims to disable the service a target supplies. There are two main types of DoS attacks: \textit{Vulnerability DoS} and \textit{Flood DoS} \cite{Lin2013}. In one hand, a Vulnerability DoS aims to exploit a vulnerability of the target system to reduce performance or render it useless. An example of such an attack is to send a malformed message to the target machine which can not deal with this message and as a result crashes. On the other hand, a Flood DoS attack tries to exhaust the resources of the target. An example of such an attack is to fill the entire bandwidth of the target with messages of the attacker. The attacker can accomplish such bandwidth by using multiple machines to produce traffic. When multiple machines are used in the attack, the attack is called a Distributed Denial of Service (DDoS) attack.  
 
-Intrusion Detection Systems (IDS) is a system that monitors a network or system for malicious and/or suspicious activities within a network or system. Two main cattogories of IDSs are present: \textit{host-based} and \textit{network-based} \cite{Fallahi2016}. A Host-based IDS (HIDS) is only for a single machine. A Network-based IDS (NIDS) is for an entire network. A NIDS usually scans the incoming and outgoing traffic of a network endpoint. Based on the detection methods of IDSs, again two categories can be identified: \textit{Anomaly-based} and \textit{Signature-based} \cite{fragkiadakis2015anomaly}. An Anomaly-based IDS (AIDS) bases its detection on a constructed baseline and detects deviations from this baseline. A Signature-based IDS (SIDS) bases its detection on signatures. An AIDS has as benefit that it can detect unknown attacks but with the weakness that it has a low accuracy and difficulty to trigger alerts in the right time. A SIDS has as benefit that it has a high accuracy but with the weakness that it is ineffective in detecting unknown attacks and it is hard to maintain an up to date signature list \cite{Liao2013}. 
+DDoS attacks are increasing in power. In 2011 the peak attack was measured at 60 Gb/s, in 2015 500 Gb/s and in 2016 1.1 Tb/s \cite{Santana2017}. Also, the frequency of the attacks are increasing: in the last quartile of 2016 more than 5000 attacks where observed, whereas 200 in 2012 \cite{Santana2017}. An explanation for this increase in frequency could be the rise of \textit{booters}. A booter, also called stressers, are websites that offer DoS attacks via a website. Booters eliminate the need for any technical knowledge to launch an attack. Clients of booters only need to pay a couple of dollars to launch an attack.
 
-DoS attacks are increasing in power. In 2011 the peak attack was measured at 60 Gb/s, in 2015 500 Gb/s and in 2016 1.1 Tb/s \cite{Santana2017}. Also the frequency of the attacks are increasing: in the last quartile of 2016 more than 5000 attacks where observed, whereas 200 in 2012 \cite{Santana2017}. An explanation for this increase in frequency could be the rise of \textit{booters}. A booter, also called stressers, are websites that offer DoS attacks via a website. Booters eliminate the need for any technical knowledge to launch an attack. Clients of booters only need to pay a couple of dollars to launch an attack.
+As the number of attacks is increasing and downtime costs are exceeding on average \$300K per hour \cite{ITIC2016} a need for an efficient and effective mitigation method becomes bigger. Before mitigation can be done, first proper detection must be done. Intrusion Detection Systems (IDS) are systems that can fulfill this task. An IDS is a system that monitors a network or system for malicious and/or suspicious activities within a network or system. Two main categories of IDSs are present: \textit{host-based} and \textit{network-based} \cite{Fallahi2016}. A Host-based IDS (HIDS) is only for a single machine. A Network-based IDS (NIDS) is for an entire network. A NIDS usually scans the incoming and outgoing traffic of a network endpoint. Based on the detection methods of IDSs, again two categories can be identified: \textit{Anomaly-based} and \textit{Signature-based} \cite{fragkiadakis2015anomaly}. An Anomaly-based IDS (AIDS) bases its detection on a constructed baseline and detects deviations from this baseline. A Signature-based IDS (SIDS) bases its detection on signatures. An AIDS has as benefit that it can detect unknown attacks but with the weakness that it has a low accuracy and difficulty to trigger alerts at the right time. A SIDS has as benefit that it has a high accuracy but with the weakness that it is ineffective in detecting unknown attacks and it is hard to maintain an up to date signature list \cite{Liao2013}. 
 
-As the number of attacks are increasing and downtime costs are exceeding on average \$300K per hour \cite{ITIC2016} a need for an efficient and effective mitigation method becomes bigger. We believe that SIDSs are promising systems that can fulfil these requirements when the major downside of keeping and up to date signature list is tackled. That is why we propose an automatic method to generate signatures for the SIDS Bro\footnote{\url{https://www.bro.org/}}. To accomplish this goal we have defined the following research questions (RQ):
+We believe that SIDSs are promising systems that can fulfill the requirement of successfully and efficiently detecting DoS attacks when the major downside of keeping an up to date signature list is tackled. That is why we propose an automatic method to generate signatures and apply this to specific SIDS. We have chosen Bro\footnote{\url{https://www.bro.org/}} as SIDS. Bro is an open source network security monitor that offers the functionality of a SIDS. 
+
+
+
+To pursue our goal we have the defined the following research questions (RQ) as the basis of the proposed research:
+
+%Intrusion Detection Systems (IDS) is a system that monitors a network or system for malicious and/or suspicious activities within a network or system. Two main cattogories of IDSs are present: \textit{host-based} and \textit{network-based} \cite{Fallahi2016}. A Host-based IDS (HIDS) is only for a single machine. A Network-based IDS (NIDS) is for an entire network. A NIDS usually scans the incoming and outgoing traffic of a network endpoint. Based on the detection methods of IDSs, again two categories can be identified: \textit{Anomaly-based} and \textit{Signature-based} \cite{fragkiadakis2015anomaly}. An Anomaly-based IDS (AIDS) bases its detection on a constructed baseline and detects deviations from this baseline. A Signature-based IDS (SIDS) bases its detection on signatures. An AIDS has as benefit that it can detect unknown attacks but with the weakness that it has a low accuracy and difficulty to trigger alerts in the right time. A SIDS has as benefit that it has a high accuracy but with the weakness that it is ineffective in detecting unknown attacks and it is hard to maintain an up to date signature list \cite{Liao2013}. 
+
+
+
+%As the number of attacks are increasing and downtime costs are exceeding on average \$300K per hour \cite{ITIC2016} a need for an efficient and effective mitigation method becomes bigger. We believe that SIDSs are promising systems that can fulfil these requirements when the major downside of keeping and up to date signature list is tackled. That is why we propose an automatic method to generate signatures for the SIDS Bro\footnote{\url{https://www.bro.org/}}. To accomplish this goal we have defined the following research questions (RQ):
 
 \begin{itemize}	
 	\item \textbf{RQ1:} What are the current developments in automatic rule generation for Signature-based Intrusion Detection Systems (SIDS)?
-	\item \textbf{RQ2:} How to ... ?
-	 \item \textbf{RQ3:} How to ...?
+	\item \textbf{RQ2:} How well do automatic generated signatures achieve when applied to a real simulated DoS attack?
+	 \item \textbf{RQ3:} How can automatic generated signatures be implemented in the SIDS Bro?
 \end{itemize}
 
 
@@ -19,22 +29,17 @@ As the number of attacks are increasing and downtime costs are exceeding on aver
 
 
 
-\comment{The Introduction section has more or less the same structure as your abstract. The difference is that in the abstract each part is one statement/phrase, while in the introduction each part is a paragraph. So, (i) context, (ii) problem, (iii) proposal, and your most astonishing (iv) finding. Of course in the Introduction section you can give far more details than in the abstract. Avoid to copy and paste statements, re-write with different words.}
+%\comment{The Introduction section has more or less the same structure as your abstract. The difference is that in the abstract each part is one statement/phrase, while in the introduction each part is a paragraph. So, (i) context, (ii) problem, (iii) proposal, and your most astonishing (iv) finding. Of course in the Introduction section you can give far more details than in the abstract. Avoid to copy and paste statements, re-write with different words.}
 
-\comment{In addition to the structure that you already know you should include your \textit{research questions} between the ``proposal'' paragraph and the ``findings''. The statement that precede the RQ is something like the following: }
+%\comment{In addition to the structure that you already know you should include your \textit{research questions} between the ``proposal'' paragraph and the ``findings''. The statement that precede the RQ is something like the following: }
 
-``To pursue our goal, we have defined the following research questions (RQ) as the basis of our research: 
-\begin{itemize}	
-	\item \textbf{RQ1:} What are the current developments in automatic rule generation for Signature-based Intrusion Detection Systems (SIDS)?
-	\item \textbf{RQ2:} How to ... ?
-	 \item \textbf{RQ3:} How to ...?
-\end{itemize}
-''
+%``To pursue our goal, we have defined the following research questions (RQ) as the basis of our research: 
 
-\comment{Please, avoid "yes or no" questions. Make questions that your reader are not able to answer immediately. Usually the questions depend on each other, it means that to answer one question you must answer the one before.}
 
-\comment{Before a little bit of your most astonishing findings you must to introduce the structure of your paper/proposal. Usually the text looks like the following.}
+%\comment{Please, avoid "yes or no" questions. Make questions that your reader are not able to answer immediately. Usually the questions depend on each other, it means that to answer one question you must answer the one before.}
+
+%\comment{Before a little bit of your most astonishing findings you must to introduce the structure of your paper/proposal. Usually the text looks like the following.}
  
-``The remainder of this paper/proposal is organized as follows. Section 2 will discuss the approaches expected for answering each research question. After that, we present a preliminary planning for the research questions in Section 3. Finally, we conclude with a proposal and planning for the thesis structure in Section 4.'' 
+The remainder of this proposal is organized as follows. Section 2 will discuss the related work identified. Section 3 will discuss the intended approaches on how to answer each research question. In Section 4 we will conclude with a planning for the introduced research. 
 
 

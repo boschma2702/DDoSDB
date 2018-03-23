@@ -1,32 +1,39 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.17)  21 MAR 2018 10:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  23 MAR 2018 15:23
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 (libs/sig-alternate.cls
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig.
+sty"
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gra
+phics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdf
+tex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen102
@@ -35,10 +42,12 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \epsfxsize=\dimen104
 \epsfysize=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb
+.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfont
+s.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup4
@@ -46,24 +55,30 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.
+sty"
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.
+sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.s
+ty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen106
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.s
+ty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen107
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.s
+ty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count79
@@ -137,7 +152,9 @@ LaTeX Warning: You have requested document class `libs/sig-alternate',
 
 Document Class: sig-alternate 2007/03/01 - V1.9 - based on acmproc.cls V1.3 <No
 v. 30 '99>
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latexsym.st
+y"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -167,19 +184,19 @@ Using 'Abbrev' bibliography style
 \acmcopyr=\toks32
 \boilerplate=\toks33
 \copyrightetc=\toks34
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+)
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks35
 \inpenc@posthook=\toks36
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+ ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+ ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -420,7 +437,7 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -460,8 +477,8 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+ ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu
+"
 File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -485,14 +502,15 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty
+"
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+ ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfig
+ure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip44
 \subfigcapskip=\skip45
@@ -508,14 +526,18 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg)
+
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfig
+ure.cfg")
 \subfig@top=\skip48
 \subfig@bottom=\skip49
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\dblfloatfix\dblfloatfix.
-sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\dblfloatfix\dblf
+loatfix.sty"
 Package: dblfloatfix 2012/12/31 v1.0a (JAW)
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fixltx2e.st
+y"
 Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
 Applying: [2015/01/01] Old fixltx2e package on input line 46.
 
@@ -528,10 +550,13 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 )
 \@dblbotnum=\count112
 \c@dblbotnumber=\count113
-) (C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+)
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.
+sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3
+.sty"
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen125
@@ -556,7 +581,7 @@ tempboxa \hbox {\textbf {#1: #2}} \ifdim \wd \@tempboxa >\hsize \textbf {#1: #2
 }\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
 \c@ContinuedFloat=\count114
 Package caption Info: subfigure package is loaded.
-) (C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\soul\soul.sty
+) ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\soul\soul.sty"
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@word=\toks37
 \SOUL@lasttoken=\toks38
@@ -568,18 +593,21 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen133
 \SOUL@ulht=\dimen134
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.st
+y"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\col
+or.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\colortbl\colortb
+l.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen135
 \extrarowheight=\dimen136
@@ -600,15 +628,21 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperre
+f.sty"
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsu
+b-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -648,30 +682,34 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxete
+x.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook
+.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen137
 \Hy@linkcounter=\count116
 \Hy@pagecounter=\count117
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.
+def"
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count118
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperre
+f.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 4383.
 Package hyperref Info: Hyper figures OFF on input line 4509.
 Package hyperref Info: Link nesting OFF on input line 4514.
 Package hyperref Info: Hyper index ON on input line 4517.
@@ -680,11 +718,6 @@ Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count119
-
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen138
 \Fld@menulength=\count120
@@ -705,21 +738,22 @@ LaTeX Info: Redefining \pageref on input line 6443.
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdftex
+.def"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 \Fld@listcount=\count124
 \c@bookmark@seq@number=\count125
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunfi
+lecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip56
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 16.
-
-(libs/gantt.sty
+Package hyperref Info: Option `breaklinks' set `true' on input line 13.
+ (libs/gantt.sty
 
 LaTeX Warning: You have requested package `libs/gantt',
                but the package provides `gantt'.
@@ -727,47 +761,48 @@ LaTeX Warning: You have requested package `libs/gantt',
 Package: gantt 2011/03/20 Some macros for drawing gantt diagrams using tkiz v.1
 .3
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.s
-ty
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
-
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-
-common.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlaye
+r\tikz.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gf.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+frcs.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common.tex"
 \pgfutil@everybye=\toks44
 \pgfutil@tempdima=\dimen141
 \pgfutil@tempdimb=\dimen142
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-
-common-lists.tex))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-
-latex.def
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-common-lists.tex"))
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfutil-latex.def"
 \pgfutil@abb=\box30
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.c
-ode.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfrcs.code.tex"
 Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
 Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.s
-ty
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.s
-ty
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys
-.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\basiclayer\p
+gfcore.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\systemlayer\
+pgfsys.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys.code.tex"
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.
-code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks45
 \pgfkeys@temptoks=\toks46
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysf
-iltered.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks47
 ))
 \pgf@x=\dimen143
@@ -788,42 +823,42 @@ iltered.code.tex
 \t@pgf@tokb=\toks49
 \t@pgf@tokc=\toks50
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cf
-g
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys
--pdftex.def
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-pdftex.def"
 File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys
--common-pdf.def
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsys-common-pdf.def"
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys
-softpath.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count130
 \pgfsyssoftpath@bigbuffer@items=\count131
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys
-protocol.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlaye
+r\pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcore.code.tex"
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.
-tex
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.c
-ode.tex
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.c
-ode.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser
-.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thcalc.code.tex"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thutil.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thparser.code.tex"
 \pgfmath@dimen=\dimen151
 \pgfmath@count=\count132
 \pgfmath@box=\box31
@@ -831,30 +866,30 @@ ode.tex)
 \pgfmath@stack@operand=\toks52
 \pgfmath@stack@operation=\toks53
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.code.tex
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.basic.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.trigonometric.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.random.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.comparison.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.base.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.round.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.misc.code.tex)
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfuncti
-ons.integerarithmetics.code.tex)))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.
-code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.code.tex"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.basic.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.trigonometric.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.random.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.comparison.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.base.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.round.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.misc.code.tex")
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfunctions.integerarithmetics.code.tex")))
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+thfloat.code.tex"
 \c@pgfmathroundto@lastzeros=\count133
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-points.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen152
 \pgf@picmaxx=\dimen153
@@ -871,127 +906,128 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen164
 \pgf@zy=\dimen165
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-pathconstruct.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen166
 \pgf@path@lasty=\dimen167
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-pathusage.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 \pgf@shorten@end@additional=\dimen168
 \pgf@shorten@start@additional=\dimen169
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-scopes.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box32
 \pgf@hbox=\box33
 \pgf@layerbox@main=\box34
 \pgf@picture@serial@count=\count134
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-graphicstate.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
 \pgflinewidth=\dimen170
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-transformations.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
 \pgf@pt@x=\dimen171
 \pgf@pt@y=\dimen172
 \pgf@pt@temp=\dimen173
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-quick.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-objects.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreobjects.code.tex"
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-pathprocessing.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepathprocessing.code.tex"
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-arrows.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfarrowsep=\dimen174
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-shade.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen175
 \pgf@sys@shading@range@num=\count135
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-image.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-external.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box35
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-layers.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorelayers.code.tex"
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-transparency.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcoretransparency.code.tex"
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore
-patterns.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclayer
+\pgfcorepatterns.code.tex"
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodules
-hapes.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box36
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulep
-lot.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmoduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcom
-p-version-0-65.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen176
 \pgf@nodesepend=\dimen177
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcom
-p-version-1-18.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibilit
+y\pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
-
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.st
-y
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.
-code.tex))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.
-tex))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.c
-ode.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+ffor.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\utilities\pg
+fkeys.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgfkeys.code.tex"))
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\math\pgfmath
+.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex"))
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities\
+pgffor.code.tex"
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.
-tex)
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfma
+th.code.tex")
 \pgffor@iter=\dimen178
 \pgffor@skip=\dimen179
 \pgffor@stack=\toks54
 \pgffor@toks=\toks55
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz
-\tikz.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\tikz.code.tex"
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibra
-ryplothandlers.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count136
 \pgfplotmarksize=\dimen180
@@ -1011,8 +1047,8 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikznumberofcurrentchild=\count139
 \tikz@fig@count=\count140
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulem
-atrix.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\pg
+fmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count141
 \pgfmatrixcurrentcolumn=\count142
@@ -1020,25 +1056,28 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 )
 \tikz@expandcount=\count144
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz
-\libraries\tikzlibrarytopaths.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.
+sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyva
+l.tex"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvuti
+ls.tex"
 \XKV@toks=\toks56
 \XKV@tempa@toks=\toks57
 )
 \XKV@depth=\count145
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+) ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\calc.sty
+"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count146
 \calc@Bcount=\count147
@@ -1051,23 +1090,24 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count148
 \calc@Cskip=\skip59
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\latex\forloop\forloop.sty
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\forloop\forloop.
+sty"
 Package: forloop 2006/09/18 v3.0 For Loops for LaTeX
 )
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz
-\libraries\tikzlibrarypatterns.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibrarypatterns.code.tex"
 File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibra
-rypatterns.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibrarypatterns.code.tex"
 File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 ))
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz
-\libraries\tikzlibraryarrows.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendla
+yer\tikz\libraries\tikzlibraryarrows.code.tex"
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibra
-ryarrows.code.tex
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries\
+pgflibraryarrows.code.tex"
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen189
 ))
@@ -1087,22 +1127,23 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
-(C:\Users\Boschma\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count152
 \scratchdimen=\dimen190
@@ -1115,10 +1156,13 @@ LaTeX Font Info:    ... okay on input line 21.
 \MPnumerator=\count156
 \makeMPintoPDFobject=\count157
 \everyMPtoPDFconversion=\toks59
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+)
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
+f-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.
+sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1137,78 +1181,56 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring ON on input line 21.
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package hyperref Info: Link coloring OFF on input line 25.
+
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref
+.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\getti
+tlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
-
-(main.out) (main.out)
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
+ (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 35.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+LaTeX Font Info:    Try loading font information for U+lasy on input line 40.
+ ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (sections/abstract.tex
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 3.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-))
-(sections/01_introduction.tex
+) (sections/abstract.tex) (sections/01_introduction.tex
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 8.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [1{C:/Users/Boschma/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+)) (sections/02_relatedwork.tex [1{C:/Users/Boschma/AppData/Local/MiKTeX/2.9/pd
+ftex/config/pdftex.map}
 
 
-]) (sections/02_relatedwork.tex) (sections/03_proposal.tex
-Package epstopdf Info: Source file: <figs/example.eps>
-(epstopdf)                    date: 2018-03-14 09:09:59
-(epstopdf)                    size: 6590 bytes
-(epstopdf)             Output file: <figs/example-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-14 09:09:59
-(epstopdf)                    size: 4341 bytes
-(epstopdf)             Command: <epstopdf --outfile=figs/example-eps-converted-
-to.pdf figs/example.eps>
-(epstopdf)             \includegraphics on input line 8.
-Package epstopdf Info: Output file is already uptodate.
-<figs/example-eps-converted-to.pdf, id=59, 405.515pt x 79.29625pt>
-File: figs/example-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/example-eps-converted-to.pdf>
-Package pdftex.def Info: figs/example-eps-converted-to.pdf  used on input line 
-8.
-(pdftex.def)             Requested size: 252.0pt x 49.27809pt.
-
-Overfull \hbox (12.0pt too wide) in paragraph at lines 8--9
- [][] 
+]) (sections/03_proposal.tex) (sections/00_planning.tex
+Overfull \hbox (6.33118pt too wide) in paragraph at lines 6--7
+[]\T1/cmr/m/n/10 Finally, a week to fi-nal-ize the en-tire re-search is planned
+.
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (sections/00_planning.tex
 \ganttx=\count159
 \ganttheight=\count160
 Missing character: There is no ; in font nullfont!
@@ -1236,62 +1258,52 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (1.91985pt too wide) in paragraph at lines 8--41
-[] 
+Overfull \hbox (1.92172pt too wide) in paragraph at lines 12--48
+ [] 
  []
 
-) [2 <./figs/example-eps-converted-to.pdf>] (main.bbl
-Overfull \hbox (198.97882pt too wide) in paragraph at lines 4--9
-\T1/cmtt/m/n/10 cost-[]of-[]hourly-[]downtime-[]soars-[]81-[]of-[]enterprises-[
-]say-[]it-[]exceeds-[]300k-[]on-[]average/$[][]\T1/cmr/m/n/10 . 
- []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
- [3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
+) (main.bbl) [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 326FDD067C6E56C951158A9BBC34752C;236.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 19060 strings out of 493305
- 356472 string characters out of 3138868
- 438853 words of memory out of 3000000
- 22196 multiletter control sequences out of 15000+200000
- 49826 words of font info for 72 fonts, out of 3000000 for 9000
+ 19021 strings out of 493305
+ 359261 string characters out of 3128932
+ 435811 words of memory out of 3000000
+ 22164 multiletter control sequences out of 15000+200000
+ 49334 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,77p,1217b,753s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,12n,77p,1518b,889s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ecbx0800.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
-pen\ec\dpi600\ecrm0800.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Boschma\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk> <C:\Users\Boschm
-a\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\
-Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecso1
-000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecrm0700.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
-jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Boschma\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1000.pk>{C:/Program Files/MiKTeX
- 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/
-uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
-Output written on main.pdf (3 pages, 154207 bytes).
+0\ectt1000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
+pen\ec\dpi600\ecbx0800.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0900.pk> <C:\Users\Boschma\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Boschm
+a\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\
+Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0
+700.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
+dpi600\ecti1000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecrm1000.pk>{C:/Users/Boschma/AppData/Local/Programs/MiKTeX 
+2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><C:/Users/Boschma/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Boschma/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/B
+oschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C
+:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.
+pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/u
+tmr8a.pfb>
+Output written on main.pdf (2 pages, 133796 bytes).
 PDF statistics:
- 432 PDF objects out of 1000 (max. 8388607)
+ 356 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
