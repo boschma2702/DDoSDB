@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}
+
+\bibitem{ITIC2016}
+Cost of hourly downtime soars: 81\% of enterprises say it exceeds \$300k on
+  average.
+\newblock
+  \url{http://itic-corp.com/blog/2016/08/cost-of-hourly-downtime-soars-81-of-enterprises-say-it-exceeds-300k-on-average/}.
+\newblock Accessed: 2018-03-21.
+
+\bibitem{Santana2017}
+J.~{Cardoso de Santanna}.
+\newblock Ddos-as-a-service: Investigating booter websites, 11 2017.
+\newblock CTIT Ph.D. thesis Series No. 17-448, ISSN 1381-3617.
+
+\bibitem{Fallahi2016}
+N.~Fallahi and A.~Sami.
+\newblock {Automated Flow-based Rule Generation for Network Intrusion Detection
+  Systems}.
+\newblock pages 1948--1953, 2016.
+
+\bibitem{fragkiadakis2015anomaly}
+A.~G. Fragkiadakis, V.~A. Siris, N.~E. Petroulakis, and A.~P. Traganitis.
+\newblock Anomaly-based intrusion detection of jamming attacks, local versus
+  collaborative detection.
+\newblock {\em Wireless Communications and Mobile Computing}, 15(2):276--294,
+  2013.
+
+\bibitem{Liao2013}
+H.~J. Liao, C.~H. {Richard Lin}, Y.~C. Lin, and K.~Y. Tung.
+\newblock {Intrusion detection system: A comprehensive review}.
+\newblock {\em Journal of Network and Computer Applications}, 36(1):16--24,
+  2013.
+
+\bibitem{Lin2013}
+D.~Lin.
+\newblock {Network Intrusion Detection and Mitigation against Denial of Service
+  Attack}.
+\newblock {\em WPE-II Written Report}, (January):1--28, 2013.
+
+\end{thebibliography}

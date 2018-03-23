@@ -1,5 +1,23 @@
-\section{Introduction} 
-\label{sec:introduction}
+\section{Introduction} \label{sec:introduction}
+a Denial of Service (DoS) attack is an attack that aims to disable the service a target supplies. There are two main types of DoS attacks: \textit{Vulnerability DoS} and \textit{Flood DoS} \cite{Lin2013}. A Vulnerability DoS aims to exploit a vulnerability of the target system to reduce performance or render it useless. An example of such an attack is to send a malformed messages to the target machines which can not deal with this message and as a result crashes. A Flood DoS attack on the other hand tries to exhaust the resources of the target. An example of such an attack is to fill the entire bandwidth of the target with messages of the attacker. The attacker can accomplish such speeds by using multiple machines to produces traffic. When multiple machines are used in the attack, the attack is called a Distributed Denial of Service (DDoS) attack.  
+
+Intrusion Detection Systems (IDS) is a system that monitors a network or system for malicious and/or suspicious activities within a network or system. Two main cattogories of IDSs are present: \textit{host-based} and \textit{network-based} \cite{Fallahi2016}. A Host-based IDS (HIDS) is only for a single machine. A Network-based IDS (NIDS) is for an entire network. A NIDS usually scans the incoming and outgoing traffic of a network endpoint. Based on the detection methods of IDSs, again two categories can be identified: \textit{Anomaly-based} and \textit{Signature-based} \cite{fragkiadakis2015anomaly}. An Anomaly-based IDS (AIDS) bases its detection on a constructed baseline and detects deviations from this baseline. A Signature-based IDS (SIDS) bases its detection on signatures. An AIDS has as benefit that it can detect unknown attacks but with the weakness that it has a low accuracy and difficulty to trigger alerts in the right time. A SIDS has as benefit that it has a high accuracy but with the weakness that it is ineffective in detecting unknown attacks and it is hard to maintain an up to date signature list \cite{Liao2013}. 
+
+DoS attacks are increasing in power. In 2011 the peak attack was measured at 60 Gb/s, in 2015 500 Gb/s and in 2016 1.1 Tb/s \cite{Santana2017}. Also the frequency of the attacks are increasing: in the last quartile of 2016 more than 5000 attacks where observed, whereas 200 in 2012 \cite{Santana2017}. An explanation for this increase in frequency could be the rise of \textit{booters}. A booter, also called stressers, are websites that offer DoS attacks via a website. Booters eliminate the need for any technical knowledge to launch an attack. Clients of booters only need to pay a couple of dollars to launch an attack.
+
+As the number of attacks are increasing and downtime costs are exceeding on average \$300K per hour \cite{ITIC2016} a need for an efficient and effective mitigation method becomes bigger. We believe that SIDSs are promising systems that can fulfil these requirements when the major downside of keeping and up to date signature list is tackled. That is why we propose an automatic method to generate signatures for the SIDS Bro\footnote{\url{https://www.bro.org/}}. To accomplish this goal we have defined the following research questions (RQ):
+
+\begin{itemize}	
+	\item \textbf{RQ1:} What are the current developments in automatic rule generation for Signature-based Intrusion Detection Systems (SIDS)?
+	\item \textbf{RQ2:} How to ... ?
+	 \item \textbf{RQ3:} How to ...?
+\end{itemize}
+
+
+
+
+
+
 
 \comment{The Introduction section has more or less the same structure as your abstract. The difference is that in the abstract each part is one statement/phrase, while in the introduction each part is a paragraph. So, (i) context, (ii) problem, (iii) proposal, and your most astonishing (iv) finding. Of course in the Introduction section you can give far more details than in the abstract. Avoid to copy and paste statements, re-write with different words.}
 
@@ -7,7 +25,7 @@
 
 ``To pursue our goal, we have defined the following research questions (RQ) as the basis of our research: 
 \begin{itemize}	
-	\item \textbf{RQ1:} What are ..?
+	\item \textbf{RQ1:} What are the current developments in automatic rule generation for Signature-based Intrusion Detection Systems (SIDS)?
 	\item \textbf{RQ2:} How to ... ?
 	 \item \textbf{RQ3:} How to ...?
 \end{itemize}

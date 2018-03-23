@@ -1,11 +1,16 @@
 \documentclass{libs/sig-alternate}
-
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{subfigure,dblfloatfix} %to fix the problem of [h!] [t!] [!b]
 \usepackage{caption}
 
 \usepackage{soul}
 \usepackage[table]{xcolor} 
+
+\bibliographystyle{abbrv}  
+%\usepackage[]{biblatex}
+%\addbibresource{bibliography.bib}
 
 \usepackage[breaklinks]{hyperref}
 \hypersetup{colorlinks, citecolor=blue, filecolor=black, linkcolor=blue, urlcolor=blue}
@@ -20,17 +25,15 @@
 \numberofauthors{1} 
 \author{
 \alignauthor
-	<Your name>\\
+	René Boschma\\
     \affaddr{University of Twente}\\
-    \email{1st author's email address}
+    \email{r.boschma@student.utwente.nl}
 }
 
 
 \maketitle
 
 
-\section*{IMPORTANT NOTES:}
-Before everything, I do recommend the lecture at \url{https://www.youtube.com/watch?v=g3dkRsTqdDA}. Please, avoid vague words: relatively, possible, high, low, a lot, a few, ... Be quantitative! give an idea of numbers. Avoid start sentences with 'because'. 
 	
 
 \input{sections/abstract}
@@ -41,6 +44,7 @@ Before everything, I do recommend the lecture at \url{https://www.youtube.com/wa
 \input{sections/00_planning}
 
 \newpage
+%\printbibliography
 \bibliography{bibliography}
 
 
