@@ -12,6 +12,11 @@ J.~{Cardoso de Santanna}.
 \newblock Ddos-as-a-service: Investigating booter websites, 11 2017.
 \newblock CTIT Ph.D. thesis Series No. 17-448, ISSN 1381-3617.
 
+\bibitem{Chimetseren2014}
+E.~Chimetseren, K.~Iwai, H.~Tanaka, and T.~Kurokawa.
+\newblock {A Study of IDS using Discrete Fourier Transform}.
+\newblock pages 463--466, 2014.
+
 \bibitem{Fallahi2016}
 N.~Fallahi and A.~Sami.
 \newblock {Automated Flow-based Rule Generation for Network Intrusion Detection
@@ -30,6 +35,12 @@ A.~G. Fragkiadakis, V.~A. Siris, N.~E. Petroulakis, and A.~P. Traganitis.
   collaborative detection.
 \newblock {\em Wireless Communications and Mobile Computing}, 15(2):276--294,
   2013.
+
+\bibitem{Lai2004}
+H.~Lai, S.~Cai, H.~Huang, J.~Xie, and H.~Li.
+\newblock {A parallel intrusion detection system for high-speed networks}.
+\newblock {\em Applied Cryptography and Network Security}, pages 439--451,
+  2004.
 
 \bibitem{Liao2013}
 H.~J. Liao, C.~H. {Richard Lin}, Y.~C. Lin, and K.~Y. Tung.

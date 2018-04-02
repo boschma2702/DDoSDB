@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  23 MAR 2018 15:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  2 APR 2018 12:31
 entering extended mode
 **./main.tex
 (main.tex
@@ -1275,13 +1275,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 19021 strings out of 493305
- 359261 string characters out of 3128932
- 435811 words of memory out of 3000000
- 22164 multiletter control sequences out of 15000+200000
+ 19026 strings out of 493305
+ 359330 string characters out of 3128932
+ 437890 words of memory out of 3000000
+ 22166 multiletter control sequences out of 15000+200000
  49334 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,77p,1518b,889s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,12n,77p,1523b,889s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ectt1000.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecbx0800.pk> <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\
@@ -1301,9 +1301,9 @@ oschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C
 :/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.
 pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/u
 tmr8a.pfb>
-Output written on main.pdf (2 pages, 133796 bytes).
+Output written on main.pdf (2 pages, 139954 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
