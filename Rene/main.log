@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  2 APR 2018 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  5 APR 2018 09:51
 entering extended mode
 **./main.tex
 (main.tex
@@ -1216,7 +1216,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Try loading font information for U+lasy on input line 40.
  ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (sections/abstract.tex) (sections/01_introduction.tex
+) (sections/01_introduction.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 8.
 
 ("C:\Users\Boschma\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
@@ -1264,8 +1266,11 @@ Overfull \hbox (1.92172pt too wide) in paragraph at lines 12--48
  [] 
  []
 
-) (main.bbl) [2]
+) (main.bbl [2])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+ [3
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
@@ -1275,11 +1280,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 19026 strings out of 493305
- 359330 string characters out of 3128932
- 437890 words of memory out of 3000000
- 22166 multiletter control sequences out of 15000+200000
- 49334 words of font info for 71 fonts, out of 3000000 for 9000
+ 19029 strings out of 493305
+ 359311 string characters out of 3128932
+ 437988 words of memory out of 3000000
+ 22169 multiletter control sequences out of 15000+200000
+ 48256 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,77p,1523b,889s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Boschma\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
@@ -1299,11 +1304,10 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Boschma/Ap
 pData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/B
 oschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C
 :/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.
-pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/u
-tmr8a.pfb>
-Output written on main.pdf (2 pages, 139954 bytes).
+pfb>
+Output written on main.pdf (3 pages, 136243 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 24 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

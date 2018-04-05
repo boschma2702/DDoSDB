@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ITIC2016}
 Cost of hourly downtime soars: 81\% of enterprises say it exceeds \$300k on
@@ -6,6 +6,16 @@ Cost of hourly downtime soars: 81\% of enterprises say it exceeds \$300k on
 \newblock
   \url{http://itic-corp.com/blog/2016/08/cost-of-hourly-downtime-soars-81-of-enterprises-say-it-exceeds-300k-on-average/}.
 \newblock Accessed: 2018-03-21.
+
+\bibitem{Akamai2016}
+Akamai.
+\newblock {State of the Internet/Security (Q3/2017)}.
+\newblock page~40, 2016.
+
+\bibitem{Akamai2017}
+Akamai.
+\newblock {State of the Internet/Security (Q1/2017)}.
+\newblock 4:26, 2017.
 
 \bibitem{Santana2017}
 J.~{Cardoso de Santanna}.
@@ -53,5 +63,10 @@ D.~Lin.
 \newblock {Network Intrusion Detection and Mitigation against Denial of Service
   Attack}.
 \newblock {\em WPE-II Written Report}, (January):1--28, 2013.
+
+\bibitem{Arbor2014}
+A.~Networks and A.~Networks.
+\newblock {Arbor Networks 9th Annual Worldwide Infrastructure Security Report}.
+\newblock 2014.
 
 \end{thebibliography}

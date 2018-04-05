@@ -2,8 +2,11 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: bibliography.bib
 Warning--to sort, need author or key in ITIC2016
+Warning--empty journal in Akamai2016
+Warning--empty journal in Akamai2017
 Warning--empty journal in Chimetseren2014
 Warning--empty journal in Fallahi2016
 Warning--empty journal in Fouda2017
 Warning--there's a number but no volume in Lin2013
-(There were 5 warnings)
+Warning--empty journal in Arbor2014
+(There were 8 warnings)
