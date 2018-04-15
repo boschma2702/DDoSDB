@@ -15,12 +15,7 @@ Akamai.
 \bibitem{Akamai2017}
 Akamai.
 \newblock {State of the Internet/Security (Q1/2017)}.
-\newblock 4:26, 2017.
-
-\bibitem{Santana2017}
-J.~{Cardoso de Santanna}.
-\newblock Ddos-as-a-service: Investigating booter websites, 11 2017.
-\newblock CTIT Ph.D. thesis Series No. 17-448, ISSN 1381-3617.
+\newblock 2017.
 
 \bibitem{Chimetseren2014}
 E.~Chimetseren, K.~Iwai, H.~Tanaka, and T.~Kurokawa.
@@ -35,8 +30,7 @@ N.~Fallahi and A.~Sami.
 
 \bibitem{Fouda2017}
 K.~M. I.~A. Fouda.
-\newblock {Mathematics {\&} Computer Science Payload Based Signature Generation
-  for DDoS Attacks}.
+\newblock {Payload Based Signature Generation for DDoS Attacks}.
 \newblock 2017.
 
 \bibitem{fragkiadakis2015anomaly}
