@@ -21,6 +21,19 @@ In the next subsection we will describe various types of DDoS attacks.
 In this section we will briefly elaborate on various types of attack. The main characteristics can be found in Table $\dots$.
 
 \paragraph{UDP Fragment}
+The UDP Fragmantation attack exploits the fragmentation used in the IP protocol \cite{imperva}. When a packet is to big to be sent across a network link, it will be broken down into smaller packets and later on resembled again. In a UDP Fragmentation attack, fraudulent UDP packets are sent which are larger than the maximum transmission unit (MTU) of the network. The idea is that the packets can not be reassembled and thereby consuming the server's resources. 
+
+\paragraph{DNS}
+The DNS attack exploits the public DNS services on the internet. DNS is used to resolve IP adresses from website names. In a DNS attack the attacker spoofs its IP replacing its IP with that of the target. The DNS server sees the request as it came from the target and replies as if it were a normal request. This way of attacking allows an attacker to amplify its own bandwidth by using the asymmetry between request and response size. 
+
+\paragraph{NTP}
+The NTP attack exploits the public NTP services on the internet. NTP services allow for time synchronization between machines. This attack is similar to the DNS attack, but this time the NTP services are used. 
+
+\paragraph{Chargen}
+The Chargen attack exploits the public Character Generator Protocol (Chargen). Once a Chargen services receives a packet via UDP, it responds by sending a datagram containing a random number between 0 and 512 characters long \cite{ietf1983}. The attack approach works the same as the NTP and DNS attack.  
+
+
+
 
 
 
