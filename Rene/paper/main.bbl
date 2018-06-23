@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ITIC2016}
 Cost of hourly downtime soars: 81\% of enterprises say it exceeds \$300k on
@@ -6,6 +6,11 @@ Cost of hourly downtime soars: 81\% of enterprises say it exceeds \$300k on
 \newblock
   \url{http://itic-corp.com/blog/2016/08/cost-of-hourly-downtime-soars-81-of-enterprises-say-it-exceeds-300k-on-average/}.
 \newblock Accessed: 2018-03-21.
+
+\bibitem{ietf1995}
+Young A.
+\newblock { Connection-less Lightweight X.500 Directory Access Protocol}.
+\newblock 1995.
 
 \bibitem{Akamai2016}
 Akamai.
@@ -29,6 +34,15 @@ Alexandros~G Fragkiadakis, Vasilios~A Siris, Nikolaos~E Petroulakis, and
   collaborative detection.
 \newblock {\em Wireless Communications and Mobile Computing}, 15(2):276--294,
   2013.
+
+\bibitem{imperva}
+Imperva Incapsula.
+\newblock {IP FRAGMENTATION ATTACK}.
+
+\bibitem{ietf1983}
+Postel J.
+\newblock {Character Generator Protocol}.
+\newblock 1983.
 
 \bibitem{Liao2013}
 Hung~Jen Liao, Chun~Hung {Richard Lin}, Ying~Chih Lin, and Kuang~Yuan Tung.
