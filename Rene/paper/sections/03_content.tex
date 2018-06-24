@@ -78,7 +78,45 @@ HTTP & HTTP \&\& HTTP\_request \&\& src\_port==80
 \end{table}
 
 
-\subsubsection{BRO Rule Syntax} 
+\subsubsection{Bro Rule Syntax} 
+This section discusses the parts used of the Bro signature framework \footnote{\url{https://www.bro.org/sphinx/frameworks/signatures.html}} and Bro scripting language. 
+
+Bro's primary focus is on its scripting language. With this language one can define various analyzing detection policies. Besides the scripting language, Bro offers also a signature language. This language is similar to Snort rules and rely on low level pattern matching. In this paper we will focus mainly on the Bro signature language to detect various types of DDoS attacks. 
+
+\paragraph{Bro Signature Framework}
+The format of a signature is defined in Listing \ref{lst:signature-format}. As can be observed, each signature starts with the \emph{signature} keyword followed by a signature identifier. In the body the attributes to match on and the event that needs to be raised are defined. The used attributes will be explained in the next paragraph. The \emph{event} keyword is used to define a message that is to be passed to the event listener.
+
+\begin{lstlisting}[caption={Bro Signature Format}, label={lst:signature-format}]
+signature [SIGNATURE-ID] {
+  ATTRIBUTES  
+  event "message to display"
+}
+\end{lstlisting}
+
+
+\paragraph{Bro Attribute Rules}
+An attribute rule has format defined in Listing \ref{lst:attribute-format}. Here \emph{KEYWORD} indicates a certain field to match, \emph{CMP} indicates the way to compare and \emph{VALUE} indicates the value to compare to. Each element of the attribute rule is explained below.
+
+\begin{lstlisting}[caption={Bro Signature attribute rule format}, label={lst:attribute-format}]
+KEYWORD CMP VALUE
+\end{lstlisting}
+
+Various keywords are known to the Bro signature language. We will briefly discuss the ones used in this research. \emph{src-ip} and \emph{dst-ip} specify the source and destination address respectively. Addresses can be IPv4 or IPv6. \emph{src-port} and \emph{dst-port} specify the source and destination port respectively. \emph{ip-proto} specifies the protocol used. Values possible are: \emph{tcp, udp, icmp, icmp6, ip} and \emph{ip6}. It is also possible to define a general condition to match on the header of the packet. This allows to compare on specific parts of the header. An example of how the keyword can look is given in Listing \ref{lst:header-condition}. First the attribute rule starts with the keyword \emph{header}. Then the protocol is specified (which can be any of the ip-proto values mentioned earlier). Then one defines within the square brackets the offset and size in bytes separated by a colon. In the example an offset of 0 and size of 1 is defined which indicates in the ICMP protocol the type. 
+
+\begin{lstlisting}[caption={Bro Signature header condition}, label={lst:header-condition}]
+header icmp[0:1]
+\end{lstlisting} 
+
+Bro Signature Framework has various comparator to match packets on. For instance, it is possible to specify that a certain address needs to be higher than a certain value. In our research, we only used the \emph{==} comparator.
+
+   
+
+
+
+\paragraph{Bro Scripting Language}
+One can define an email address to which a message is sent whenever a signature is matched. This, however, is not suitable for our intended research. Therefore we also need to define our own Bro script in order to receive an adequate message that a signature is matched. The script used can be found in Listing $\dots$. This script is responsible for loading the signatures as well as executing a python script whenever a packet is matched against a signature. The contents of the python script will be explained in Section \ref{subsec:methodology}. 
+
+The Bro script has some things to note. The first is the \emph{@load-sigs ./sig} line. This line is responsible for loading the signatures files. The second is the \emph{event signature\_match($\dots$)} line. This rule illustrates the event-driven programming script of Bro. Whenever a signature is matched, the contents defined within the curly brackets is executed. The \emph{msg} parameter is given the value specified by the event keyword in the signature.  
 
 
 \subsection{Methodology}\label{subsec:methodology}

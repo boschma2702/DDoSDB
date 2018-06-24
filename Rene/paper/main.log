@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  23 JUN 2018 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  24 JUN 2018 16:25
 entering extended mode
 **./main.tex
 (main.tex
@@ -1779,17 +1779,24 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 47.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [5]) (sections/04_conclusion.tex)
+ [5]
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 23.
+Package pdftex.def Info: images/logo_header.png  used on input line 84.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [6]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 89.
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 105.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+ [7]) (sections/04_conclusion.tex)
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 23.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [7] (main.bbl
+ [8] (main.bbl
 Underfull \hbox (badness 3168) in paragraph at lines 4--9
 []\OT1/ptm/m/n/10 Cost of hourly down-time soars: 81% of en-ter-prises say it e
 x-ceeds
@@ -1812,32 +1819,33 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 27.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [8]
+ [9]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 27.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 50098DFD5F6868C5E759A4C8F3F7A0EB;711.
+(rerunfilecheck)             Checksum: 8C5703BC17D7B8E0D804D192D65F02E3;711.
  ) 
 Here is how much of TeX's memory you used:
- 25939 strings out of 493305
- 469340 string characters out of 3128932
- 665819 words of memory out of 3000000
- 28908 multiletter control sequences out of 15000+200000
- 26829 words of font info for 65 fonts, out of 3000000 for 9000
+ 26218 strings out of 493305
+ 471550 string characters out of 3128932
+ 672982 words of memory out of 3000000
+ 29172 multiletter control sequences out of 15000+200000
+ 28414 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,15n,77p,1198b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,16n,78p,1198b,1145s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
-nc}<C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/
-ucrr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/
-times/utmb8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/urw/times/utmr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 138694 bytes).
+nc}<C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/urw/courier/ucrr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/times/utmb8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (9 pages, 160041 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
