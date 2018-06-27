@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  24 JUN 2018 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  27 JUN 2018 21:12
 entering extended mode
 **./main.tex
 (main.tex
@@ -1791,12 +1791,44 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 105.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [7]) (sections/04_conclusion.tex)
+ [7]
+<./images/test-setup.pdf, id=172, 572.1375pt x 240.9pt>
+File: ./images/test-setup.pdf Graphic file (type pdf)
+<use ./images/test-setup.pdf>
+Package pdftex.def Info: ./images/test-setup.pdf  used on input line 132.
+(pdftex.def)             Requested size: 335.74254pt x 141.36519pt.
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 134.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+ [8]
+Overfull \hbox (8.61488pt too wide) in paragraph at lines 141--153
+ [][] 
+ []
+
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 157.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+[9 <./images/test-setup.pdf
+
+pdfTeX warning: pdflatex (file ./images/test-setup.pdf): PDF inclusion: invalid
+ other resource which is no dict (key 'ProcSets', type <array>); ignored.
+>]
+
+LaTeX Warning: Reference `lst:bro-script' on page 10 undefined on input line 15
+8.
+
+
+LaTeX Warning: Reference `fig:response-times' on page 10 undefined on input lin
+e 158.
+
+) (sections/04_conclusion.tex)
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 23.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [8] (main.bbl
+ [10] (main.bbl
 Underfull \hbox (badness 3168) in paragraph at lines 4--9
 []\OT1/ptm/m/n/10 Cost of hourly down-time soars: 81% of en-ter-prises say it e
 x-ceeds
@@ -1819,7 +1851,7 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 27.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [9]
+ [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (main.aux)
@@ -1827,15 +1859,19 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 27.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8C5703BC17D7B8E0D804D192D65F02E3;711.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 26218 strings out of 493305
- 471550 string characters out of 3128932
- 672982 words of memory out of 3000000
- 29172 multiletter control sequences out of 15000+200000
+ 26235 strings out of 493305
+ 471867 string characters out of 3128932
+ 673080 words of memory out of 3000000
+ 29182 multiletter control sequences out of 15000+200000
  28414 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,78p,1198b,1145s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,16n,78p,1381b,1145s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
 nc}<C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmmi10.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
@@ -1843,9 +1879,9 @@ e1/urw/courier/ucrr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/urw/times/utmb8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/
 MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 160041 bytes).
+Output written on main.pdf (11 pages, 191623 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
