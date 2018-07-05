@@ -140,25 +140,26 @@ For this research we choose 8 attacks to test against our setup. Each attack has
 \centering
 \begin{tabular}{l | l | l | l | l | l}
 ID & Type & \# src IPs & \# src ports & \# dst ports & special  \\ \hline \hline
-072a & DNS & 30551 & 1 & 62591 & dns\_query = diasp.org \\ \hline
-13c4 & UDP & 12 & 1 & 83 &  \\ \hline
-151e & ICMP & 244 & 12 & 1 & icmp\_type = 3 \\ \hline
-54a7 & ICMP & 270 & 2821 & 1 & icmp\_type = 11 \\ \hline
-7bf0 & NTP & 1288 & 1 & 11 &  \\ \hline
-8219 & UDP & 12 & 1 & 96 &  \\ \hline
-9d61 & ICMP & 6245 & 0 & 0 & icmp\_type = 3 \\ \hline
 e0b2 & ICMP & 83 & 0 & 0 & icmp\_type = 5 \\ \hline
-e6ee & DNS & 25027 & 1 & 60219 & dns\_query = hoffmeister.be
+0292 & TCP & 6 & 1 & 1 & tcp\_flags = ··········S· \\ \hline
+dd26 & Chargen & 439 & 1 & 5 &  \\ \hline
+e6ee & DNS & 25027 & 1 & 60219 & dns\_query = hoffmeister.be \\ \hline
+54a7 & ICMP & 270 & 2821 & 1 & icmp\_type = 11 \\ \hline
+8219 & UDP & 12 & 1 & 96 &  \\ \hline
+39b6 & TCP & 66610 & 41757 & 1 & tcp\_flags = ············ \\ \hline
+13c4 & UDP & 12 & 1 & 83 &  \\ \hline
+c606 & TCP & 13452 & 12110 & 1 & tcp\_flags = ····CE····S· \\ \hline
+7bf0 & NTP & 1288 & 1 & 11 &  \\ \hline
+151e & ICMP & 244 & 12 & 1 & icmp\_type = 3 \\ \hline
+9d61 & ICMP & 6245 & 0 & 0 & icmp\_type = 3 \\ \hline
+072a & DNS & 30551 & 1 & 62591 & dns\_query = diasp.org
 \end{tabular}
 \caption{\label{tab:json-summarry}Attack charasterics}
 \end{table}
 
 To answer the second RQ a python script has been created that generates the signatures for the Bro IDS. This script receives as input a json file received from DDoSDB and converts it to a valid Bro signature rule. Each attack has its own generated signature rule. For each attack the signature is generated on the Bro machine and is measured how long it takes. The results of this can be found in Figure $\dots$.
 
-To answer the third RQ first the maximum bandwidth of the target and Bro machine are determined. This is done using iperf3\footnote{\url{https://iperf.fr/}}. The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Second, the attacker will rewrite the destination ip and mac address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Third, Bro is started in bare mode with the Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo [path\_Bro]/bro -b -i [network\_device] [path\_script]}. Fourth, the attack against the target machine is launched using tcpreplay. The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fifth and lastly, when a signature match is received, the Bro machine will sent a message to the attacker stating. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:response-times}.
-
-
-
+To answer the third RQ first the maximum bandwidth of the target and Bro machine are determined. This is done using iperf3\footnote{\url{https://iperf.fr/}}. The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Second, the attacker will rewrite the destination ip and mac address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Third, Bro is started in bare mode with the Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo [path\_Bro]/bro -b -i [network\_device] [path\_script]}. Fourth, the attack against the target machine is launched using tcpreplay. The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fifth and lastly, when a signature match is received, the Bro machine will sent a message to the attacker. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:response-times}.
 
 
 
@@ -166,5 +167,56 @@ To answer the third RQ first the maximum bandwidth of the target and Bro machine
 
 
 \subsection{Evaluation and Discussion}\label{subsec:evaluation-discussion}
-\subsubsection{Evaluation}\label{subsubsec:evalutation}
-\subsubsection{Discussion}\label{subsubsec:discussion}
+In this section we will evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}.
+
+In our first attempt of gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf we measured a maximum bandwidth of 90 Mbps. The Pi could not handle a single attack vector signature at this speed. We then decided to scale down and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi is not suitable to run the Bro IDS.  
+
+\pgfplotstableset{
+    create on use/mean/.style={create col/mean},
+    create on use/stddev/.style={create col/standard deviation},
+    create on use/stderror/.style={create col/standard error}
+}
+
+
+\begin{tikzpicture}
+  \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times Single Signature},title style={xshift=1.5em, yshift=-1.5ex}]
+    \addplot+[only marks, 
+            error bars/.cd,
+        y dir=both,
+        y explicit
+    ]
+    table[
+            x=Sample,
+            y=mean,
+            y error=stderror
+    ]
+    {results/data-attacker-single-sigs.txt};
+  \end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times All Signature},title style={xshift=1.5em, yshift=-1.5ex}]
+    \addplot+[only marks, 
+            error bars/.cd,
+        y dir=both,
+        y explicit
+    ]
+    table[
+            x=Sample,
+            y=mean,
+            y error=stderror
+    ]
+    {results/data-attacker-all-sigs.txt};
+  \end{axis}
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
