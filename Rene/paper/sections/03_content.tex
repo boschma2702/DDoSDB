@@ -169,7 +169,11 @@ To answer the third RQ first the maximum bandwidth of the target and Bro machine
 \subsection{Evaluation and Discussion}\label{subsec:evaluation-discussion}
 In this section we will evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}.
 
-In our first attempt of gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf we measured a maximum bandwidth of 90 Mbps. The Pi could not handle a single attack vector signature at this speed. We then decided to scale down and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi is not suitable to run the Bro IDS.  
+In our first attempt of gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf we measured a maximum bandwidth of 90 Mbps. The Pi could not handle a single attack vector signature at this speed. We then decided to scale down and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a small signature set, is not suitable to run the Bro IDS.  
+
+We then switched to using the attacking laptop as Bro machine and as attacker a different laptop. We again used iperf3 to measure the bandwidth that could be accomplished. This again measured 90 Mbps.  
+
+Several measurements were done during the experiment. Every measurement is done 10 times. The first measurement done is the time needed to generate the Bro rules from the supplied signatures. The results are shown in Figure \ref{fig:generation-times}. As can be seen the attacks e6ee, 072a and 39b6 took considerable more time than the other attacks. When looking at Table \ref{tab:attack-overview} one can see that these attacks are the ones with the most overall entries. 
 
 \pgfplotstableset{
     create on use/mean/.style={create col/mean},
@@ -177,8 +181,41 @@ In our first attempt of gathering results we used as the attacker a laptop with 
     create on use/stderror/.style={create col/standard error}
 }
 
-
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
+  \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Bro Rule Generation Times},title style={xshift=1.5em, yshift=-1.5ex}]
+    \addplot+[only marks, 
+            error bars/.cd,
+        y dir=both,
+        y explicit
+    ]
+    table[
+            x=Sample,
+            y=mean,
+            y error=stderror
+    ]
+    {results/data-generation.txt};
+  \end{axis}
+\end{tikzpicture}
+\caption{Bro Rule Generation Times}
+\label{fig:generation-times}
+\end{figure}
+
+The second measurement done is the time it takes to send a message from the Bro machine to the attacker. The time measurement includes setting up a TCP connection, sending a message and then closing it again. The average of these measurements was 8.41E-5 seconds with a standard error of 1.29E-5 seconds. 
+
+The third and final measurement done is the time it took for the Bro machine to react to an incoming attack. The time includes detecting the attack and sending a message to the attacker. The results of this measurement are shown in Figure \ref{fig:attack-response-times}. This measurement was done twice, once with only a single signature specific to the attack active and once with all signatures active. The result of the single signature active is shown in Figure \ref{fig:attack-response-times-single}. The results of all the signatures is shown in Figure \ref{fig:attack-response-times-all}. 
+
+When looking to the single attack vectors it is interesting to note that the attack vectors 8219 and 13c4 take significantly longer to detect than the other attack vectors. Both attack vectors are UDP attacks. One would more likely expect that the DNS attack vector would take longer to detect due to the fact that regex matching needs to be done against a packet's payload. Furthermore, the DNS attack vector e6ee has also more source IPs and destination ports to match against than both the UDP attacks. 
+
+When looking to Figure \ref{fig:attack-response-times-all} it can be seen that Bro does not increases significantly for all attack vectors. For a big part times roughly stay the same. Most interesting are the increases in 072a and e0b2. Our initial guess was that was due to the order in which the rules were listed in the signature files. The order was e0b2, 0292, dd26, e6ee, 54a7, 8219, 39b6, 13c4, c606, 7bf0, 151e, 9d61, 072a. From this we conclude that the order is not what causes the increase in response time. 
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[yscale=0.7, xscale=0.7]
   \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
 xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times Single Signature},title style={xshift=1.5em, yshift=-1.5ex}]
     \addplot+[only marks, 
@@ -194,8 +231,11 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
     {results/data-attacker-single-sigs.txt};
   \end{axis}
 \end{tikzpicture}
-
-\begin{tikzpicture}
+\caption{Single Signatures}\label{fig:attack-response-times-single}
+\end{subfigure}%
+\begin{subfigure}[b]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[yscale=0.7, xscale=0.7]
   \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
 xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times All Signature},title style={xshift=1.5em, yshift=-1.5ex}]
     \addplot+[only marks, 
@@ -211,6 +251,11 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
     {results/data-attacker-all-sigs.txt};
   \end{axis}
 \end{tikzpicture}
+\caption{All signatures}\label{fig:attack-response-times-all}
+\end{subfigure}
+\label{fig:attack-response-times}
+\caption{Graphs Showing response times after attack is launched}
+\end{figure}
 
 
 
