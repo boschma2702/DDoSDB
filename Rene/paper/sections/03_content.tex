@@ -2,14 +2,14 @@
 \label{section:content}
 
 \subsection{DDoS Attacks and BRO}\label{subsec:ddos-and-bro}
-In this section we will first define the notion of a DDoS attack by explaining how the infrastructure looks like. Then we will elaborate on various DDoS attacks used nowadays and discuss their main characteristics. After this we will discuss the syntax of the detection rules of the BRO SIDS.
+In this section, we will first define the notion of a DDoS attack by explaining the infrastructure. Then we elaborate on various DDoS attacks used nowadays and discuss their main characteristics. After this, we will discuss the syntax of the signature rules of the BRO SIDS.
 
 \subsubsection{The DDoS Attack}
-Figure \ref{fig:ddos-overview} shows the infrastructure of a DDoS attack. Actors involved in a DDoS attack are denoted by a letter (A-D) whereas data streams are denoted by numbers (1-5). 
+Figure \ref{fig:ddos-overview} shows the infrastructure of a DDoS attack. Actors involved in an attack are denoted by a letter (A-D) whereas data streams are denoted by numbers (1-5). 
 
-A DDoS attack starts with an attacker (A). The attacker sends data needed to start the attack (1) to the Command and Control (C\&C) servers (B). The C\&C servers control the infected machines (C). The infected machines are also known under the name of bots. The C\&C servers plus the infected machines are more commonly named as a botnet. The C\&C servers send a message (2) to the infected machines. In case of the Ramnit botnet, only the infected machines counted 3.2 million machines \cite{europol2015}. At this point two paths are used to get to the target machine (E). The first path possible is aiming the infected machines directly to the target (4). The second path possible is using public services (D) like a DNS to reach the target (5). 
+A DDoS attack starts with an attacker (A). The attacker sends data needed to start the attack (1) to the Command and Control (C\&C) servers (B). The C\&C servers control the infected machines (C). The infected machines are also known under the name of bots. The C\&C servers plus the infected machines are more commonly known as a botnet. In case of the Ramnit botnet, only the infected machines counted 3.2 million machines \cite{europol2015}. When the C\&C servers receive a message from the attacker, they at their turn send a message (2) to the infected machines. At this point, two paths are used to get to the target machine (E). The first path possible is aiming the infected machines directly to the target (4). This means that traffic from the infected machines will go directly towards the target. The second path possible is using public services (D). This means that traffic from the infected machines will first go through a public service, like a DNS, to reach the target (5). 
 
-In the next subsection we will describe various types of DDoS attacks. 
+In the next subsection, we describe various types of DDoS attacks and relate them to the architecture described above. 
 
 \begin{figure}[H]
 \centering
@@ -17,41 +17,38 @@ In the next subsection we will describe various types of DDoS attacks.
 \caption{Overview of DDoS attack infrastructure}
 \end{figure}\label{fig:ddos-overview}
 
-\subsubsection{Types of Attacks}
-In this section we will briefly elaborate on the most common types of attack mentioned in the security report of Akami Q4 2017 \cite{Akamai2017-4}. An overview of the main characteristics per attack can be found in Table \ref{tab:attack-overview}.
+\subsubsection{Types of Attacks}\label{subsubsec:types-of-attacks}
+In this subsection, we briefly elaborate on some of the most common types of DDoS attacks mentioned in the security report of Akamai Q4 2017 \cite{Akamai2017-4}. Of each attack, we discuss which protocol is used and which mechanism is exploited. An overview of the main characteristics per attack type can be found in Table \ref{tab:attack-overview}.
 
 
 \paragraph{UDP}
-The UDP attack exploits UDP. The attack consists of sending a large number of packets to random ports of the target. Hereby the target machine will check if an application listens to this port and if not will reply with an ICMP Destination Unreachable packet. Looking at Figure \ref{fig:ddos-overview}, path 4 is used.
+The UDP attack exploits UDP. The attack consists of sending a large number of packets to random ports of the target. Hereby the target machine will check if an application listens to this port and if not will reply with an ICMP Destination Unreachable (ICMP type 3) packet. Looking at Figure \ref{fig:ddos-overview}, path 4 is used.
 
 \paragraph{UDP Fragment}
-The UDP Fragmantation attack exploits the fragmentation used in the IP protocol \cite{imperva}. When a packet is to big to be sent across a network link, it will be broken down into smaller packets and later on resembled again. In a UDP Fragmentation attack, fraudulent UDP packets are sent which are larger than the maximum transmission unit (MTU) of the network. The idea is that the packets can not be reassembled and thereby consuming the server's resources. 
+The UDP Fragmentation attack exploits the fragmentation used in the IP protocol \cite{imperva}. When a packet is too big to be sent across a network link, it will be broken down into smaller packets and later on resembled again. In a UDP Fragmentation attack, UDP packets are sent which are larger than the maximum transmission unit (MTU) of the network thereby forcing fragmentation. This results in a higher per packet bandwidth consumption than a normal UDP attack. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
 
 \paragraph{DNS}
-The DNS attack exploits the public Domain Name System (DNS) services on the internet. DNS is used to resolve IP adresses from website names. In a DNS attack the attacker spoofs its IP replacing its IP with that of the target. The DNS server sees the request as it came from the target and replies as if it were a normal request. This way of attacking allows an attacker to amplify its own bandwidth by using the asymmetry between request and response size. Looking at Figure \ref{fig:ddos-overview}, path 5 is used. The attack runs over UDP.  
+The DNS attack exploits the public Domain Name System (DNS) services on the internet. DNS runs over UDP and is used to resolve IP addresses from website names. In a DNS attack, the attacker spoofs its IP replacing it with that of the target. The DNS server sees the request as it came from the target and replies as if it were a normal request. This way of attacking allows an attacker to amplify its own bandwidth by using the asymmetry between request and response size. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.
 
 \paragraph{NTP}
-The NTP attack exploits the public Network Time Protocol (NTP) services on the internet. NTP services allow for time synchronization between machines. This attack is similar to the DNS attack, but this time the NTP services instead of the DNS services are used. 
+The NTP attack exploits the public Network Time Protocol (NTP) services on the internet. NTP runs over UDP and allows for time synchronization between machines. This attack is similar to the DNS attack, but this time the NTP services are used instead of the DNS services. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.  
 
 \paragraph{Chargen}
-The Chargen attack exploits the public Character Generator Protocol (Chargen). Once a Chargen services receives a packet via UDP, it responds by sending a datagram containing a random number between 0 and 512 characters long \cite{ietf1983}. The attack approach works the same as the NTP and DNS attacks.  
+The Chargen attack exploits the public Character Generator Protocol (Chargen) services. Once a Chargen service receives a packet via UDP, it responds by sending a datagram containing a random number between 0 and 512 characters long \cite{ietf1983}. The attack approach works the same as the NTP and DNS. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.   
 
 \paragraph{CLDAP}
-The CLDAP attack exploits the Connection-less Lightweight Directory Access Protocol (CLDAP). CLDAP is designed to provide access to directories while not needing the recourse requirements of the Directory Access Protocol (DAP) \cite{ietf1995}. The attack is similar to the DNS, NTP and Chargen attack. 
+The CLDAP attack exploits the Connection-less Lightweight Directory Access Protocol (CLDAP). CLDAP runs over UDP and is designed to provide access to directories while not needing the resource requirements of the Directory Access Protocol (DAP) \cite{ietf1995}. The attack is similar to the DNS, NTP and Chargen attack. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.   
 
 \paragraph{SYN}
-The SYN attack exploits the three-way handshake of TCP. During this attack a large number of SYN packets are send to the target machine. The target machine will respond by sending a SYN-ACK packet. The attacker at this point does not respond by sending an ACK packet, leaving the connection half initialized. This way the attacker keeps connections from being used by legitimate users. Compared to the attacks mentioned above, this one runs over TCP rather than UDP. In this attack, path 4 is used. 
+The SYN attack exploits the three-way handshake of TCP. During this attack, a large number of SYN packets are sent to the target machine. The target machine will respond by sending a SYN-ACK packet. The attacker at this point does not respond by sending an ACK packet, leaving the connection half initialized. This way the attacker keeps connections from being used by legitimate users. Compared to the attacks mentioned above, this one runs over TCP rather than UDP. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
 
 \paragraph{SSDP}
-The SSDP attack exploits the Simple Service Discovery Protocol (SSDP). SSDP is used to discover network services. The attack is similiar to DNS, NTP and Chargen but when looking to Figure \ref{fig:ddos-overview} the machines in D are for instance home routers, printers or other IOT devices rather than a dedicated server. 
+The SSDP attack exploits the Simple Service Discovery Protocol (SSDP). SSDP runs over UDP and is used to discover network services. The attack is similar to DNS, NTP and Chargen but when looking to Figure \ref{fig:ddos-overview} the machines in D are for instance home routers, printers or other IOT devices rather than a dedicated server. 
 
 
 \paragraph{ACK}
-The ACK attack exploits TCP. During this attack a large number of ACK packets are send towards the target. These ACKs do not belong to any connection and are therefore dropped at the target machine. This however does deplete resources of the target. The attack runs via path 4.  
+The ACK attack exploits TCP. During this attack, a large number of ACK packets are sent towards the target. These ACKs do not belong to any connection and are therefore dropped at the target machine. This, however, does deplete resources of the target. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
 
-
-\paragraph{RPC}
-?
 
 \paragraph{HTTP}
 Rather than the attacks mentions above, the HTTP attack targets the application layer. The attack consists of sending a large number of HTTP requests (like GET, PUSH and POST) to the target, hereby depleting its resources. Looking at Figure \ref{fig:ddos-overview}, path 4 is used.
@@ -71,7 +68,6 @@ Chargen & UDP \&\& src\_port==19 \\ \hline
 SYN & TCP \&\& flag==SYN \\ \hline
 SSDP & UDP \&\& src\_port==1900 \\ \hline
 ACK & TCP \&\& flag==ACK \\ \hline
-RPC & ? \\ \hline
 HTTP & HTTP \&\& HTTP\_request \&\& src\_port==80
 \end{tabular}
 \caption{\label{tab:attack-overview}Attack types main characteristic overview.}
@@ -79,52 +75,66 @@ HTTP & HTTP \&\& HTTP\_request \&\& src\_port==80
 
 
 \subsubsection{Bro Rule Syntax} 
-This section discusses the parts used of the Bro signature framework \footnote{\url{https://www.bro.org/sphinx/frameworks/signatures.html}} and Bro scripting language. 
+This subsection discusses the various parts used of the Bro SIDS. Bro's primary focus is on its scripting language.  With this language, one can define various analyzing scripts and detection policies. Besides the scripting language, Bro also offers also a signature language\footnote{\url{https://www.bro.org/sphinx/frameworks/signatures.html}}. This language is similar to Snort rules and relies on low-level pattern matching. In this paper, we will focus mainly on the Bro signature language to detect various types of DDoS attacks. In this subsection, first, an introduction to the signature language is given. Second, the signature language is applied to some of the attack types described in Section \ref{subsubsec:types-of-attacks}. Third and lastly, a brief explanation of the Bro scripting language is given.
 
-Bro's primary focus is on its scripting language. With this language one can define various analyzing detection policies. Besides the scripting language, Bro offers also a signature language. This language is similar to Snort rules and rely on low level pattern matching. In this paper we will focus mainly on the Bro signature language to detect various types of DDoS attacks. 
 
-\paragraph{Bro Signature Framework}
-The format of a signature is defined in Listing \ref{lst:signature-format}. As can be observed, each signature starts with the \emph{signature} keyword followed by a signature identifier. In the body the attributes to match on and the event that needs to be raised are defined. The used attributes will be explained in the next paragraph. The \emph{event} keyword is used to define a message that is to be passed to the event listener.
+The format of a signature is shown in Listing \ref{lst:signature-format}. As can be observed, each signature starts with the \emph{signature} keyword followed by a signature identifier. The body contains attributes. These attributes can be rules to match on. Besides rules, it is also possible to specify in the attributes whether an event must be raised when all attribute rules within a signature are matched for a specific package. Both possibilities will be explained further. 
 
 \begin{lstlisting}[caption={Bro Signature Format}, label={lst:signature-format}]
 signature [SIGNATURE-ID] {
-  ATTRIBUTES  
-  event "message to display"
+  ATTRIBUTES 
 }
 \end{lstlisting}
 
+An attribute rule follows the format \emph{KEYWORD CMP VALUE}. Here the \emph{KEYWORD} indicates a certain field to match, \emph{CMP} indicates the way to compare and \emph{VALUE} indicates the value to compare to.  Various keywords are known to the Bro signature language. In this paper, we will only mention the ones used. \emph{src-ip} and \emph{dst-ip} specify the source and destination address respectively. Addresses can be IPv4 or IPv6. \emph{src-port} and \emph{dst-port} specify the source and destination port respectively. \emph{ip-proto} specifies the protocol used. Values possible are: \emph{tcp, udp, icmp, icmp6, ip} and \emph{ip6}. It is interesting to note that Bro allows supplying a list of values in the format $v_1, \dots, v_n$. Whenever one of those values matches a value within a received packet, the match of that rule will be evaluated to true. Furthermore, Bro allows various comparators such as $==, <=, >=, >, <$ and $!=$.
 
-\paragraph{Bro Attribute Rules}
-An attribute rule has format defined in Listing \ref{lst:attribute-format}. Here \emph{KEYWORD} indicates a certain field to match, \emph{CMP} indicates the way to compare and \emph{VALUE} indicates the value to compare to. Each element of the attribute rule is explained below.
-
-\begin{lstlisting}[caption={Bro Signature attribute rule format}, label={lst:attribute-format}]
-KEYWORD CMP VALUE
-\end{lstlisting}
-
-Various keywords are known to the Bro signature language. We will briefly discuss the ones used in this research. \emph{src-ip} and \emph{dst-ip} specify the source and destination address respectively. Addresses can be IPv4 or IPv6. \emph{src-port} and \emph{dst-port} specify the source and destination port respectively. \emph{ip-proto} specifies the protocol used. Values possible are: \emph{tcp, udp, icmp, icmp6, ip} and \emph{ip6}. It is also possible to define a general condition to match on the header of the packet. This allows to compare on specific parts of the header. An example of how the keyword can look is given in Listing \ref{lst:header-condition}. First the attribute rule starts with the keyword \emph{header}. Then the protocol is specified (which can be any of the ip-proto values mentioned earlier). Then one defines within the square brackets the offset and size in bytes separated by a colon. In the example an offset of 0 and size of 1 is defined which indicates in the ICMP protocol the type. 
-
-\begin{lstlisting}[caption={Bro Signature header condition}, label={lst:header-condition}]
-header icmp[0:1]
+\begin{lstlisting}[caption={Bro signature which matches all ICMP type 3 packets}, label={lst:sig-icmp}]
+signature icmp-type-3 {
+  ip-proto == icmp  
+  header icmp[0:1] == 3
+  event "ICMP Type 3 Detected"
+}
 \end{lstlisting} 
 
-Bro Signature Framework has various comparator to match packets on. For instance, it is possible to specify that a certain address needs to be higher than a certain value. In our research, we only used the \emph{==} comparator.
-
-   
+Besides matching on general conditions it is also possible to match specific bytes of a header. An example of this is given in line 2 of Listing \ref{lst:sig-icmp} where an attribute rule is written which matches all ICMP type 3 packets. As can be seen, the attribute rule starts with the keyword \emph{header}. Then the protocol is specified (which can be any of the ip-proto values mentioned above). Then one defines within the square brackets the offset and size in bytes separated by a colon. In the example, the value of byte position 0  (which indicates the ICMP type) is matched against the value 3. It must be noted that not every protocol defines values that fall perfectly within the space of bytes such as the ICMP type. For instance the TCP flags. An example of a signature which matches all TCP SYN packets targeted at destination port 80 is given in Listing \ref{lst:sig-tcp}. This example shows that while the SYN flag's bit position in the header is 111, the offset specified in the header condition corresponds to bit position 104. This means that this signature will only match whenever the SYN flag is set to 1 and none of the other (including one reserved bit). This means that when one wants to write an attribute rule that matches whenever the SYN flag is set (and doesn't care about the values of the other flags), the rule has to contain $2^7$ entries. 
 
 
+\begin{lstlisting}[caption={Bro signature which matches all TCP SYN packets targeted at port 80}, label={lst:sig-tcp}]
+signature icmp-type-3 {
+  ip-proto == tcp  
+  header tcp[13:1] == 2
+  event "TCP SYN Detected"
+}
+\end{lstlisting} 
 
-\paragraph{Bro Scripting Language}
-One can define an email address to which a message is sent whenever a signature is matched. This, however, is not suitable for our intended research. Therefore we also need to define our own Bro script in order to receive an adequate message that a signature is matched. The script used can be found in Listing $\dots$. This script is responsible for loading the signatures as well as executing a python script whenever a packet is matched against a signature. The contents of the python script will be explained in Section \ref{subsec:methodology}. 
+Both Listing \ref{lst:sig-icmp} and Listing \ref{lst:sig-tcp} illustrate in line 4 the \emph{event} keyword followed by a string. The Bro scripting language is event based. Scripts are defined to be executed whenever a certain event is triggered. One of the events defined in the language is the \emph{signature\_match} event. This event is triggered whenever a signature, which has an event defined in its body, is matched against a package. When this signature matches, the contents of the string is passed to the event listener, including various other parameters. For our experiment, we used one Bro script which can be found in Listing \ref{lst:bro-script}. The purpose of this script is to execute a python script whenever a signature match has occurred. The Bro script has some things to note. The first is the \emph{@load-sigs ./sig} line. This line is responsible for loading the signatures files. The second is the \emph{event signature\_match($\dots$)} line. This rule illustrates the event-driven programming script of Bro. Whenever a signature is matched, the contents defined within the curly brackets is executed. The \emph{msg} parameter is given string specified after the event keyword in the signature.  
 
-The Bro script has some things to note. The first is the \emph{@load-sigs ./sig} line. This line is responsible for loading the signatures files. The second is the \emph{event signature\_match($\dots$)} line. This rule illustrates the event-driven programming script of Bro. Whenever a signature is matched, the contents defined within the curly brackets is executed. The \emph{msg} parameter is given the value specified by the event keyword in the signature.  
+  
+\begin{lstlisting}[caption={Bro script which executes whenever signature match occurs}, label={lst:bro-script}]
+@load base/utils/exec
+@load-sigs ./sig
+
+redef exit_only_after_terminate=T;
+
+event signature_match(stage: signature_state, msg: string, data: string)
+{
+        local t= fmt("python3 send_to_attacker.py '%s'", msg);
+        local cmd = Exec::Command($cmd=t);
+        when (local res = Exec::run(cmd))
+        {
+                print msg;
+        }
+}
+\end{lstlisting} 
+
 
 
 
 
 \subsection{Methodology}\label{subsec:methodology}
-In this section we will discuss the test setup used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}.
+In this section, we discuss the experiment used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}. First, we explain the test setup. Second, we discuss the data used for the experiment. Third and lastly, we discuss the tools and commands used to run the experiment. 
 
-For this research we created a test setup which is schematically shown in Figure \ref{fig:test-setup}. This setup knows 4 actors. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. The fourth actor (4) is the target machine. The fifth and final actor (5) is the Bro machine: the machine that runs the Bro IDS. The Bro machine receives all egress packets of the target machine. 
+For this research, we created a test setup which is schematically shown in Figure \ref{fig:test-setup}. This setup knows 4 actors. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. The fourth actor (4) is the target machine. The fifth and final actor (5) is the Bro machine: the machine that runs the Bro SIDS. The Bro machine receives all egress packets of the target machine. 
 
 
 \begin{figure}[H]
@@ -133,7 +143,7 @@ For this research we created a test setup which is schematically shown in Figure
 \caption{Schematic overview test setup}
 \end{figure}\label{fig:test-setup}
 
-For this research we choose 8 attacks to test against our setup. Each attack has a pcap file which contains only the data captured from an actual attack. From this, DDoSDB generated a json file which describes the main attack vectors used in that attack. Each attack has been assigned a four digit identifier to which we will refer to further on in this paper. A brief summary of each attack based on the received json file can be found in Table \ref{tab:json-summarry}.  
+For this research, we choose 13 attack vectors retrieved from DDoSDB to test against our setup. Each vector has a pcap file which contains only the data belonging to this vector extracted from a real attack. From this, DDoSDB generated a JSON file which describes the main characteristics of that vector. Each vector has been assigned a four-digit identifier to which we refer to in the remainder of this paper. A brief summary of each attack vector based on the received JSON file can be found in Table \ref{tab:json-summarry}.  
 
 
 \begin{table}[H]
@@ -157,23 +167,20 @@ c606 & TCP & 13452 & 12110 & 1 & tcp\_flags = ····CE····S· \\ \hline
 \caption{\label{tab:json-summarry}Attack charasterics}
 \end{table}
 
-To answer the second RQ a python script has been created that generates the signatures for the Bro IDS. This script receives as input a json file received from DDoSDB and converts it to a valid Bro signature rule. Each attack has its own generated signature rule. For each attack the signature is generated on the Bro machine and is measured how long it takes. The results of this can be found in Figure $\dots$.
+A python script has been created that generates the signatures for the Bro SIDS. This script receives as input a JSON file received from DDoSDB and converts it to a valid Bro signature rule. Each attack vector has its own generated signature rule. For each vector the signature is generated on the Bro machine and is measured how long generation takes. The results of this can be found in Figure \ref{fig:generation-times}.
 
-To answer the third RQ first the maximum bandwidth of the target and Bro machine are determined. This is done using iperf3\footnote{\url{https://iperf.fr/}}. The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Second, the attacker will rewrite the destination ip and mac address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Third, Bro is started in bare mode with the Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo [path\_Bro]/bro -b -i [network\_device] [path\_script]}. Fourth, the attack against the target machine is launched using tcpreplay. The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fifth and lastly, when a signature match is received, the Bro machine will sent a message to the attacker. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:response-times}.
-
-
-
+To measure the response time of the Bro SIDS against an ongoing DDoS attack, first, the maximum bandwidth of the target and Bro machines are determined. This is done using iperf3\footnote{\url{https://iperf.fr/}}. The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Second, the attacker will rewrite the destination IP and MAC-address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Third, Bro is started in bare mode with the written Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo bro -b -i [network\_device] [path\_script]}. Fourth, the attack against the target machine is launched using tcpreplay. The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fifth and lastly, when a signature match is received, the Bro machine will send a message to the attacker. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:attack-response-times}.
 
 
 
 \subsection{Evaluation and Discussion}\label{subsec:evaluation-discussion}
-In this section we will evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}.
+In this section, we evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}. We start by discussing the hardware used for the test setup and elaborate on each of the measured data.
 
-In our first attempt of gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf we measured a maximum bandwidth of 90 Mbps. The Pi could not handle a single attack vector signature at this speed. We then decided to scale down and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a small signature set, is not suitable to run the Bro IDS.  
+In our first attempt at gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM running Ubuntu 18.04 LTS, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf, we measured a maximum bandwidth of 90 Mbps. When replaying an attack vector at this rate, the Pi could not cope with it. We then decided to turn down the replay speed and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a signature set consisting of one signature, is not suitable to run the Bro SIDS.  
 
-We then switched to using the attacking laptop as Bro machine and as attacker a different laptop. We again used iperf3 to measure the bandwidth that could be accomplished. This again measured 90 Mbps.  
+We then switched to using the attacking laptop as Bro machine and as attacker a different laptop. We again used iperf3 to measure the bandwidth that could be accomplished. This measured 90 Mbps.  
 
-Several measurements were done during the experiment. Every measurement is done 10 times. The first measurement done is the time needed to generate the Bro rules from the supplied signatures. The results are shown in Figure \ref{fig:generation-times}. As can be seen the attacks e6ee, 072a and 39b6 took considerable more time than the other attacks. When looking at Table \ref{tab:attack-overview} one can see that these attacks are the ones with the most overall entries. 
+Several measurements were done during the experiment. Every measurement is executed 10 times. The first measurement performed is the time required to generate the Bro rules from the supplied JSON signatures. The results are shown in Figure \ref{fig:generation-times}. This figure shows the time it took in seconds to generate the signature on the Bro machine for each attack vector. As can be observed, the vectors e6ee, 072a and 39b6 took considerable more time than the other vectors. When combining this data with Table \ref{tab:attack-overview} we can conclude that the generation time grows with the number of entries.
 
 \pgfplotstableset{
     create on use/mean/.style={create col/mean},
@@ -203,13 +210,13 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
 \label{fig:generation-times}
 \end{figure}
 
-The second measurement done is the time it takes to send a message from the Bro machine to the attacker. The time measurement includes setting up a TCP connection, sending a message and then closing it again. The average of these measurements was 8.41E-5 seconds with a standard error of 1.29E-5 seconds. 
+The second measurement performed is the time it takes to send a message from the Bro machine to the attacker. The time measurement includes setting up a TCP connection, sending a message and then closing the connection. The average of these measurements was 8.41E-5 seconds with a standard error of 1.29E-5 seconds. 
 
-The third and final measurement done is the time it took for the Bro machine to react to an incoming attack. The time includes detecting the attack and sending a message to the attacker. The results of this measurement are shown in Figure \ref{fig:attack-response-times}. This measurement was done twice, once with only a single signature specific to the attack active and once with all signatures active. The result of the single signature active is shown in Figure \ref{fig:attack-response-times-single}. The results of all the signatures is shown in Figure \ref{fig:attack-response-times-all}. 
+The third and final measurement performed is the time it took for the Bro machine to react to an incoming attack. The results of these measurements are shown in Figure \ref{fig:attack-response-times}. This measurement is executed in two variants. The first variant is shown in Figure \ref{fig:attack-response-times-single} and pictures the response times when every attack vector has its own signature loaded in the Bro machine. The second variant shown in Figure \ref{fig:attack-response-times-all} pictures the response times when all attack vector's signatures are loaded. 
 
-When looking to the single attack vectors it is interesting to note that the attack vectors 8219 and 13c4 take significantly longer to detect than the other attack vectors. Both attack vectors are UDP attacks. One would more likely expect that the DNS attack vector would take longer to detect due to the fact that regex matching needs to be done against a packet's payload. Furthermore, the DNS attack vector e6ee has also more source IPs and destination ports to match against than both the UDP attacks. 
+In Figure \ref{fig:attack-response-times-single} we observe that one vector, 39b6, takes less time than the other vectors. It is, however, visible that this measurement has quite a large variance compared to the other ones and might be that the reason for its speed is due to irregularities in the test setup. Furthermore, vectors 8219 and 13c4 take significantly longer to detect than the other attack vectors. It is interesting to note that both attack vectors are UDP attacks. One would more likely expect that the DNS attack vector would take longer to detect due to the fact that regex matching needs to be done against a packet's payload. Furthermore, the DNS attack vector e6ee has also more source IPs and destination ports to match against than both the UDP attacks. 
 
-When looking to Figure \ref{fig:attack-response-times-all} it can be seen that Bro does not increases significantly for all attack vectors. For a big part times roughly stay the same. Most interesting are the increases in 072a and e0b2. Our initial guess was that was due to the order in which the rules were listed in the signature files. The order was e0b2, 0292, dd26, e6ee, 54a7, 8219, 39b6, 13c4, c606, 7bf0, 151e, 9d61, 072a. From this we conclude that the order is not what causes the increase in response time. 
+In Figure \ref{fig:attack-response-times-all} we observe that Bro does not increase significantly for all attack vectors. For most of the vectors, the times roughly stay the same. Most interesting are the increases in 072a and e0b2. Especially the latter as it increased by more than 2.5 times the time it took with only a single signature. Our initial guess was that this might be due to the order in which the rules were listed in the signature file. The order in the file was e0b2, 0292, dd26, e6ee, 54a7, 8219, 39b6, 13c4, c606, 7bf0, 151e, 9d61, 072a. From this, we conclude that the order is not what causes the increase in response time.  
 
 \begin{figure}[H]
 \centering
@@ -253,8 +260,8 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
 \end{tikzpicture}
 \caption{All signatures}\label{fig:attack-response-times-all}
 \end{subfigure}
-\label{fig:attack-response-times}
 \caption{Graphs Showing response times after attack is launched}
+\label{fig:attack-response-times}
 \end{figure}
 
 

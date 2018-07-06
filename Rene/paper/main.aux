@@ -36,54 +36,53 @@
 \newlabel{subsec:ddos-and-bro}{{2.1}{3}{DDoS Attacks and BRO}{subsection.2.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}The DDoS Attack}{3}{subsubsection.2.1.1}}
 \citation{Akamai2017-4}
-\citation{imperva}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of DDoS attack infrastructure\relax }}{4}{figure.caption.2}}
 \newlabel{fig:ddos-overview}{{2.1.1}{4}{The DDoS Attack}{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Types of Attacks}{4}{subsubsection.2.1.2}}
-\@writefile{toc}{\contentsline {paragraph}{UDP}{4}{section*.3}}
+\newlabel{subsubsec:types-of-attacks}{{2.1.2}{4}{Types of Attacks}{subsubsection.2.1.2}{}}
+\citation{imperva}
 \citation{ietf1983}
 \citation{ietf1995}
+\@writefile{toc}{\contentsline {paragraph}{UDP}{5}{section*.3}}
 \@writefile{toc}{\contentsline {paragraph}{UDP Fragment}{5}{section*.4}}
 \@writefile{toc}{\contentsline {paragraph}{DNS}{5}{section*.5}}
 \@writefile{toc}{\contentsline {paragraph}{NTP}{5}{section*.6}}
 \@writefile{toc}{\contentsline {paragraph}{Chargen}{5}{section*.7}}
 \@writefile{toc}{\contentsline {paragraph}{CLDAP}{5}{section*.8}}
-\@writefile{toc}{\contentsline {paragraph}{SYN}{5}{section*.9}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Attack types main characteristic overview.\relax }}{6}{table.caption.14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Attack types main characteristic overview.\relax }}{6}{table.caption.13}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{tab:attack-overview}{{1}{6}{Attack types main characteristic overview.\relax }{table.caption.14}{}}
+\newlabel{tab:attack-overview}{{1}{6}{Attack types main characteristic overview.\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{SYN}{6}{section*.9}}
 \@writefile{toc}{\contentsline {paragraph}{SSDP}{6}{section*.10}}
 \@writefile{toc}{\contentsline {paragraph}{ACK}{6}{section*.11}}
-\@writefile{toc}{\contentsline {paragraph}{RPC}{6}{section*.12}}
-\@writefile{toc}{\contentsline {paragraph}{HTTP}{6}{section*.13}}
+\@writefile{toc}{\contentsline {paragraph}{HTTP}{6}{section*.12}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Bro Rule Syntax}{7}{subsubsection.2.1.3}}
-\@writefile{toc}{\contentsline {paragraph}{Bro Signature Framework}{7}{section*.15}}
 \newlabel{lst:signature-format}{{1}{7}{Bro Signature Format}{lstlisting.1}{}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {1}Bro Signature Format}{7}{lstlisting.1}}
-\@writefile{toc}{\contentsline {paragraph}{Bro Attribute Rules}{7}{section*.16}}
-\newlabel{lst:attribute-format}{{2}{7}{Bro Signature attribute rule format}{lstlisting.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Bro Signature attribute rule format}{7}{lstlisting.2}}
-\newlabel{lst:header-condition}{{3}{8}{Bro Signature header condition}{lstlisting.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Bro Signature header condition}{8}{lstlisting.3}}
-\@writefile{toc}{\contentsline {paragraph}{Bro Scripting Language}{8}{section*.17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Methodology}{8}{subsection.2.2}}
-\newlabel{subsec:methodology}{{2.2}{8}{Methodology}{subsection.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Schematic overview test setup\relax }}{9}{figure.caption.18}}
-\newlabel{fig:test-setup}{{2.2}{9}{Methodology}{figure.caption.18}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Attack charasterics\relax }}{10}{table.caption.19}}
-\newlabel{tab:json-summarry}{{2}{10}{Attack charasterics\relax }{table.caption.19}{}}
+\newlabel{lst:sig-icmp}{{2}{7}{Bro signature which matches all ICMP type 3 packets}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}Bro signature which matches all ICMP type 3 packets}{7}{lstlisting.2}}
+\newlabel{lst:sig-tcp}{{3}{8}{Bro signature which matches all TCP SYN packets targeted at port 80}{lstlisting.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}Bro signature which matches all TCP SYN packets targeted at port 80}{8}{lstlisting.3}}
+\newlabel{lst:bro-script}{{4}{8}{Bro script which executes whenever signature match occurs}{lstlisting.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Bro script which executes whenever signature match occurs}{8}{lstlisting.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Methodology}{9}{subsection.2.2}}
+\newlabel{subsec:methodology}{{2.2}{9}{Methodology}{subsection.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Schematic overview test setup\relax }}{10}{figure.caption.14}}
+\newlabel{fig:test-setup}{{2.2}{10}{Methodology}{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Attack charasterics\relax }}{10}{table.caption.15}}
+\newlabel{tab:json-summarry}{{2}{10}{Attack charasterics\relax }{table.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Evaluation and Discussion}{11}{subsection.2.3}}
 \newlabel{subsec:evaluation-discussion}{{2.3}{11}{Evaluation and Discussion}{subsection.2.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Bro Rule Generation Times\relax }}{12}{figure.caption.20}}
-\newlabel{fig:generation-times}{{3}{12}{Bro Rule Generation Times\relax }{figure.caption.20}{}}
-\newlabel{fig:attack-response-times-single}{{4a}{13}{Single Signatures\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:attack-response-times-single}{{a}{13}{Single Signatures\relax }{figure.caption.21}{}}
-\newlabel{fig:attack-response-times-all}{{4b}{13}{All signatures\relax }{figure.caption.21}{}}
-\newlabel{sub@fig:attack-response-times-all}{{b}{13}{All signatures\relax }{figure.caption.21}{}}
-\newlabel{fig:attack-response-times}{{\caption@xref {fig:attack-response-times}{ on input line 256}}{13}{Evaluation and Discussion}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Graphs Showing response times after attack is launched\relax }}{13}{figure.caption.21}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusion}{13}{section.3}}
-\newlabel{section:conclusion}{{3}{13}{Conclusion}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Bro Rule Generation Times\relax }}{12}{figure.caption.16}}
+\newlabel{fig:generation-times}{{3}{12}{Bro Rule Generation Times\relax }{figure.caption.16}{}}
+\newlabel{fig:attack-response-times-single}{{4a}{13}{Single Signatures\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:attack-response-times-single}{{a}{13}{Single Signatures\relax }{figure.caption.17}{}}
+\newlabel{fig:attack-response-times-all}{{4b}{13}{All signatures\relax }{figure.caption.17}{}}
+\newlabel{sub@fig:attack-response-times-all}{{b}{13}{All signatures\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Graphs Showing response times after attack is launched\relax }}{13}{figure.caption.17}}
+\newlabel{fig:attack-response-times}{{4}{13}{Graphs Showing response times after attack is launched\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Conclusion}{14}{section.3}}
+\newlabel{section:conclusion}{{3}{14}{Conclusion}{section.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Acknowledgements}{14}{section.4}}
 \bibstyle{plain}
 \bibdata{./references}

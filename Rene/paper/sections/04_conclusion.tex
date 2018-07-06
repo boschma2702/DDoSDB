@@ -1,11 +1,11 @@
 % You should not remove this section
 \section{Conclusion}
 \label{section:conclusion}
-In this paper we try to show whether Bro is a suitable IDS which is capable of detecting attacks with automated generated rules based on the signatures retrieved from DDoSDB. We tried to show this by building a test setup that resembles a common internet setup. In this setup we replayed various attack vectors to a target machine which port was mirrored to a machine running the Bro IDS. 
+In this paper, we try to show whether Bro is a suitable SIDS which is capable of detecting attacks with automated generated rules based on the signatures retrieved from DDoSDB. We first show that it is possible to automatically generate Bro signature rules from a JSON file that describes the attack vector's main characteristics. Secondly, we show whether Bro is capable of detecting the attack vectors by executing an experiment that resembles a common internet architecture. In this experiment, we replayed various attack vectors targeting a target machine which port was mirrored to a machine running the Bro IDS. 
 
-From this we can conclude that (1) it is possible to automatically generate Bro signature rules based on signatures received from DDoSDB, (2) generation time of the signature rules is based on the number of fields the signature has and (3) Bro's response time does not increase dramatically when more signatures are added. 
+From our experiments, we showed that (1) it is possible to generate Bro signatures from various characteristics of attacks. (2) showed the generation time of signatures is reasonable and (3) showed that Bro does not increase dramatically in response time when more signatures are added. However, we do note that there are some limitations to the automatic generation of signatures for Bro such as the byte addressing of the header fields.
 
-For future work one could look at the Bro scripting language. The Bro scripting language allows for more detailed analisys of packets. Also one could increase the number of signatures to discover the limit of signatures the Bro IDS can handle. Furthermore, it would also be nice to see how the generated rules behave in terms of accuracy (false positives and false negatives). 
+For future work, one could investigate the accuracy of the automatically generated rules. One could also further increase the size of the signature list to determine the maximum number of signatures the Bro SIDS can handle. Lastly, it would be interesting to see if the more expressive Bro scripting language can compete with the signature framework in terms of efficiency and accuracy. 
 
 \section{Acknowledgements}
 We would like to thank Jair Santanna for his valuable feedback, supplying the tools needed for the test setup and enabling us to gain access to the data stored in DDoSDB. Furthermore, We would like to thank Vincent Dunning for aiding in the process of creating the test setup and carrying out the experiments.  
