@@ -1,15 +1,13 @@
-\section{Content}
-\label{section:content}
 
-\subsection{DDoS Attacks and BRO}\label{subsec:ddos-and-bro}
-In this section, we will first define the notion of a DDoS attack by explaining the infrastructure. Then we elaborate on various DDoS attacks used nowadays and discuss their main characteristics. After this, we will discuss the syntax of the signature rules of the BRO SIDS.
+\section{DDoS Attacks and BRO}\label{subsec:ddos-and-bro}
+In this section, we will first define the notion of a DDoS attack by explaining the infrastructure. Then we elaborate on the most common DDoS attacks used according to Akamai's Q4 2017 report \cite{Akamai2017-4} and discuss their main characteristics. After this, we will discuss the syntax of the signature rules of the BRO SIDS.
 
-\subsubsection{The DDoS Attack}
-Figure \ref{fig:ddos-overview} shows the infrastructure of a DDoS attack. Actors involved in an attack are denoted by a letter (A-D) whereas data streams are denoted by numbers (1-5). 
+\subsection{The DDoS Attack}
+Figure \ref{fig:ddos-overview} shows the infrastructure of a DDoS attack. Actors involved in an attack are denoted by a letter (A-E) whereas data streams are denoted by numbers (1-5). 
 
-A DDoS attack starts with an attacker (A). The attacker sends data needed to start the attack (1) to the Command and Control (C\&C) servers (B). The C\&C servers control the infected machines (C). The infected machines are also known under the name of bots. The C\&C servers plus the infected machines are more commonly known as a botnet. In case of the Ramnit botnet, only the infected machines counted 3.2 million machines \cite{europol2015}. When the C\&C servers receive a message from the attacker, they at their turn send a message (2) to the infected machines. At this point, two paths are used to get to the target machine (E). The first path possible is aiming the infected machines directly to the target (4). This means that traffic from the infected machines will go directly towards the target. The second path possible is using public services (D). This means that traffic from the infected machines will first go through a public service, like a DNS, to reach the target (5). 
+A DDoS attack starts with an attacker (A). The attacker sends data needed to start the attack (1) to the Command and Control (C\&C) servers (B). The C\&C servers control the infected machines (C). The infected machines are also known under the name of bots. The C\&C servers plus the infected machines are more commonly known as a botnet. In case of the Ramnit botnet \cite{europol2015}, only the infected machines counted 3.2 million machines. When the C\&C servers receive a message from the attacker, they at their turn send a message (2) to the infected machines. At this point, two paths are used to get to the target machine (E). The first path possible is aiming the infected machines directly to the target (4). This means that traffic from the infected machines will go directly towards the target. The second path possible is using public services (D). This means that traffic from the infected machines will first go through a public service, like a DNS, to reach the target (5). 
 
-In the next subsection, we describe various types of DDoS attacks and relate them to the architecture described above. 
+A technique for an attacker to use the public services is by spoofing its IP. In this process, the attacker sends a request towards a public service where the packet's source IP is replaced by the one of the target.  This way the response of the service is reflected towards the target. A benefit for an attacker to use this path is that it is possible, due to the asymmetry between request and response sizes, to amplify once initial request.  In the next subsection, we describe various types of DDoS attacks and relate them to the architecture described above. 
 
 \begin{figure}[H]
 \centering
@@ -17,41 +15,41 @@ In the next subsection, we describe various types of DDoS attacks and relate the
 \caption{Overview of DDoS attack infrastructure}
 \end{figure}\label{fig:ddos-overview}
 
-\subsubsection{Types of Attacks}\label{subsubsec:types-of-attacks}
-In this subsection, we briefly elaborate on some of the most common types of DDoS attacks mentioned in the security report of Akamai Q4 2017 \cite{Akamai2017-4}. Of each attack, we discuss which protocol is used and which mechanism is exploited. An overview of the main characteristics per attack type can be found in Table \ref{tab:attack-overview}.
+\subsection{Types of Attacks}\label{subsubsec:types-of-attacks}
+In this subsection, we briefly elaborate on the top 10 most common types of DDoS attacks. This top 10 is retrieved from, at the time of writing, the latest report that gives an overview of the types of the most used DDoS attacks of Akamai \cite{Akamai2017-4}. Of each attack, we discuss which protocol is used and which mechanism is exploited. An overview of the main characteristics per attack type can be found in Table \ref{tab:attack-overview}.
 
 
-\paragraph{UDP}
-The UDP attack exploits UDP. The attack consists of sending a large number of packets to random ports of the target. Hereby the target machine will check if an application listens to this port and if not will reply with an ICMP Destination Unreachable (ICMP type 3) packet. Looking at Figure \ref{fig:ddos-overview}, path 4 is used.
+\paragraph{UDP:}
+The UDP attack exploits UDP protocol. The attack consists of sending a large number of packets to random ports of the target. Hereby the target machine will check if an application listens to this port and if not will reply with an ICMP Destination Unreachable (ICMP type 3) packet. At Figure \ref{fig:ddos-overview}, for this type of attack, path 4 is used.
 
-\paragraph{UDP Fragment}
-The UDP Fragmentation attack exploits the fragmentation used in the IP protocol \cite{imperva}. When a packet is too big to be sent across a network link, it will be broken down into smaller packets and later on resembled again. In a UDP Fragmentation attack, UDP packets are sent which are larger than the maximum transmission unit (MTU) of the network thereby forcing fragmentation. This results in a higher per packet bandwidth consumption than a normal UDP attack. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
+\paragraph{UDP Fragment:}
+The UDP Fragmentation attack exploits the fragmentation used in the IP protocol \cite{imperva}. When a packet is too big to be sent across a network link, it will be broken down into smaller packets and later on resembled again. In a UDP Fragmentation attack, UDP packets are sent which are larger than the maximum transmission unit (MTU), usually 1500 bytes, of the network thereby forcing fragmentation. This results in a higher number of packets than a normal UDP attack. At Figure \ref{fig:ddos-overview}, for this type of attack, path 4 is used.
 
-\paragraph{DNS}
-The DNS attack exploits the public Domain Name System (DNS) services on the internet. DNS runs over UDP and is used to resolve IP addresses from website names. In a DNS attack, the attacker spoofs its IP replacing it with that of the target. The DNS server sees the request as it came from the target and replies as if it were a normal request. This way of attacking allows an attacker to amplify its own bandwidth by using the asymmetry between request and response size. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.
+\paragraph{DNS:}
+The DNS attack exploits the public Domain Name System (DNS) services on the internet. DNS runs over UDP and is used to resolve IP addresses from website names. In a DNS attack, the attacker spoofs its IP replacing it by the one of the target. The DNS server sees the request as it came from the target and replies as if it were a normal request. This way of attacking allows an attacker to amplify its own bandwidth by using the asymmetry between request and response size. At Figure \ref{fig:ddos-overview}, for this type of attack, path 5 is used.
 
-\paragraph{NTP}
-The NTP attack exploits the public Network Time Protocol (NTP) services on the internet. NTP runs over UDP and allows for time synchronization between machines. This attack is similar to the DNS attack, but this time the NTP services are used instead of the DNS services. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.  
+\paragraph{NTP:}
+The NTP attack exploits the public Network Time Protocol (NTP) services on the internet. NTP uses the UDP protocol and allows for time synchronization between machines. This attack is similar to the DNS attack, but this time the NTP services are used instead of the DNS services. At Figure \ref{fig:ddos-overview}, for this type of attack, path 5 is used.
 
-\paragraph{Chargen}
-The Chargen attack exploits the public Character Generator Protocol (Chargen) services. Once a Chargen service receives a packet via UDP, it responds by sending a datagram containing a random number between 0 and 512 characters long \cite{ietf1983}. The attack approach works the same as the NTP and DNS. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.   
+\paragraph{Chargen:}
+The Chargen attack exploits the public Character Generator Protocol (Chargen) services. Once a Chargen service receives a packet via the UDP protocol, it responds by sending a datagram containing a random number between 0 and 512 characters long \cite{ietf1983}. The attack approach works the same as the NTP and DNS. At Figure \ref{fig:ddos-overview}, for this type of attack, path 5 is used.   
 
-\paragraph{CLDAP}
-The CLDAP attack exploits the Connection-less Lightweight Directory Access Protocol (CLDAP). CLDAP runs over UDP and is designed to provide access to directories while not needing the resource requirements of the Directory Access Protocol (DAP) \cite{ietf1995}. The attack is similar to the DNS, NTP and Chargen attack. Looking at Figure \ref{fig:ddos-overview}, path 5 is used.   
+\paragraph{CLDAP:}
+The CLDAP attack exploits the Connection-less Lightweight Directory Access Protocol (CLDAP). CLDAP runs over UDP and is designed to provide access to directories while not needing the resource requirements of the Directory Access Protocol (DAP) \cite{ietf1995}. The attack is similar to the DNS, NTP and Chargen attack. At Figure \ref{fig:ddos-overview}, for this type of attack, path 5 is used.
 
-\paragraph{SYN}
-The SYN attack exploits the three-way handshake of TCP. During this attack, a large number of SYN packets are sent to the target machine. The target machine will respond by sending a SYN-ACK packet. The attacker at this point does not respond by sending an ACK packet, leaving the connection half initialized. This way the attacker keeps connections from being used by legitimate users. Compared to the attacks mentioned above, this one runs over TCP rather than UDP. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
+\paragraph{SYN:}
+The SYN attack exploits the three-way handshake of TCP. During this attack, a large number of SYN packets are sent to the target machine. The target machine will respond by sending a SYN-ACK packet. The attacker at this point does not respond by sending an ACK packet, leaving the connection half initialized. This way the attacker keeps connections from being used by legitimate users. Compared to the attacks mentioned above, this one runs over TCP rather than UDP. At Figure \ref{fig:ddos-overview}, for this type of attack, path 4 is used.
 
-\paragraph{SSDP}
-The SSDP attack exploits the Simple Service Discovery Protocol (SSDP). SSDP runs over UDP and is used to discover network services. The attack is similar to DNS, NTP and Chargen but when looking to Figure \ref{fig:ddos-overview} the machines in D are for instance home routers, printers or other IOT devices rather than a dedicated server. 
-
-
-\paragraph{ACK}
-The ACK attack exploits TCP. During this attack, a large number of ACK packets are sent towards the target. These ACKs do not belong to any connection and are therefore dropped at the target machine. This, however, does deplete resources of the target. Looking at Figure \ref{fig:ddos-overview}, path 4 is used. 
+\paragraph{SSDP:}
+The SSDP attack exploits the Simple Service Discovery Protocol (SSDP). SSDP runs over UDP and is used to discover network services. The attack is similar to DNS, NTP and Chargen but at Figure \ref{fig:ddos-overview} the machines in D are for instance home routers, printers or other IOT devices rather than a dedicated server. 
 
 
-\paragraph{HTTP}
-Rather than the attacks mentions above, the HTTP attack targets the application layer. The attack consists of sending a large number of HTTP requests (like GET, PUSH and POST) to the target, hereby depleting its resources. Looking at Figure \ref{fig:ddos-overview}, path 4 is used.
+\paragraph{ACK:}
+The ACK attack exploits the TCP protocol. During this attack, a large number of ACK packets are sent towards the target. These ACKs do not belong to any connection and are therefore dropped at the target machine. This, however, does deplete resources of the target. At Figure \ref{fig:ddos-overview}, for this type of attack, path 4 is used.
+
+
+\paragraph{HTTP:}
+Rather than the attacks mentions above, the HTTP attack targets the application layer. The attack consists of sending a large number of HTTP requests (like GET, PUSH and POST) to the target, hereby depleting its resources. At Figure \ref{fig:ddos-overview}, for this type of attack, path 4 is used.
 
 
 
@@ -74,8 +72,8 @@ HTTP & HTTP \&\& HTTP\_request \&\& src\_port==80
 \end{table}
 
 
-\subsubsection{Bro Rule Syntax} 
-This subsection discusses the various parts used of the Bro SIDS. Bro's primary focus is on its scripting language.  With this language, one can define various analyzing scripts and detection policies. Besides the scripting language, Bro also offers also a signature language\footnote{\url{https://www.bro.org/sphinx/frameworks/signatures.html}}. This language is similar to Snort rules and relies on low-level pattern matching. In this paper, we will focus mainly on the Bro signature language to detect various types of DDoS attacks. In this subsection, first, an introduction to the signature language is given. Second, the signature language is applied to some of the attack types described in Section \ref{subsubsec:types-of-attacks}. Third and lastly, a brief explanation of the Bro scripting language is given.
+\subsection{Bro Rule Syntax}\label{subsec:bro-rule-syntax} 
+This section discusses the various parts used of Bro to implement the rule generation for the types of attacks discussed in Section \ref{subsubsec:types-of-attacks}. Bro's primary focus is on its scripting language.  With this language, one can define various analyzing scripts and detection policies. Besides the scripting language, Bro also offers also a signature language\footnote{\url{https://www.bro.org/sphinx/frameworks/signatures.html}}. This language is similar to Snort rules and relies on low-level pattern matching. In this section, first, an introduction to the signature language is given. Second, the signature language is applied to some of the attack types described in Section \ref{subsubsec:types-of-attacks}. Third and lastly, a brief explanation of the Bro scripting language is given.
 
 
 The format of a signature is shown in Listing \ref{lst:signature-format}. As can be observed, each signature starts with the \emph{signature} keyword followed by a signature identifier. The body contains attributes. These attributes can be rules to match on. Besides rules, it is also possible to specify in the attributes whether an event must be raised when all attribute rules within a signature are matched for a specific package. Both possibilities will be explained further. 
@@ -86,7 +84,7 @@ signature [SIGNATURE-ID] {
 }
 \end{lstlisting}
 
-An attribute rule follows the format \emph{KEYWORD CMP VALUE}. Here the \emph{KEYWORD} indicates a certain field to match, \emph{CMP} indicates the way to compare and \emph{VALUE} indicates the value to compare to.  Various keywords are known to the Bro signature language. In this paper, we will only mention the ones used. \emph{src-ip} and \emph{dst-ip} specify the source and destination address respectively. Addresses can be IPv4 or IPv6. \emph{src-port} and \emph{dst-port} specify the source and destination port respectively. \emph{ip-proto} specifies the protocol used. Values possible are: \emph{tcp, udp, icmp, icmp6, ip} and \emph{ip6}. It is interesting to note that Bro allows supplying a list of values in the format $v_1, \dots, v_n$. Whenever one of those values matches a value within a received packet, the match of that rule will be evaluated to true. Furthermore, Bro allows various comparators such as $==, <=, >=, >, <$ and $!=$.
+An attribute rule follows the format \emph{KEYWORD CMP VALUE}. Here the \emph{KEYWORD} indicates a certain field to match, \emph{CMP} indicates the way to compare and \emph{VALUE} indicates the value to compare to.  Various keywords are known to the Bro signature language. In this paper, we will only mention the ones used. \emph{src-ip} and \emph{dst-ip} specify the source and destination address respectively. Addresses can be IPv4 or IPv6. \emph{src-port} and \emph{dst-port} specify the source and destination port respectively. \emph{ip-proto} specifies the protocol used. Values possible for proto are: \emph{tcp, udp, icmp, icmp6, ip} and \emph{ip6}. It is interesting to note that Bro allows supplying a list of values in the format $v_1, \dots, v_n$. Whenever one of those values matches a value within a received packet, the match of that rule will be evaluated to true. Furthermore, Bro allows six comparators: $==, <=, >=, >, <$ and $!=$.
 
 \begin{lstlisting}[caption={Bro signature which matches all ICMP type 3 packets}, label={lst:sig-icmp}]
 signature icmp-type-3 {
@@ -96,7 +94,9 @@ signature icmp-type-3 {
 }
 \end{lstlisting} 
 
-Besides matching on general conditions it is also possible to match specific bytes of a header. An example of this is given in line 2 of Listing \ref{lst:sig-icmp} where an attribute rule is written which matches all ICMP type 3 packets. As can be seen, the attribute rule starts with the keyword \emph{header}. Then the protocol is specified (which can be any of the ip-proto values mentioned above). Then one defines within the square brackets the offset and size in bytes separated by a colon. In the example, the value of byte position 0  (which indicates the ICMP type) is matched against the value 3. It must be noted that not every protocol defines values that fall perfectly within the space of bytes such as the ICMP type. For instance the TCP flags. An example of a signature which matches all TCP SYN packets targeted at destination port 80 is given in Listing \ref{lst:sig-tcp}. This example shows that while the SYN flag's bit position in the header is 111, the offset specified in the header condition corresponds to bit position 104. This means that this signature will only match whenever the SYN flag is set to 1 and none of the other (including one reserved bit). This means that when one wants to write an attribute rule that matches whenever the SYN flag is set (and doesn't care about the values of the other flags), the rule has to contain $2^7$ entries. 
+Besides matching on general conditions it is also possible to match specific bytes of a header. An example of this is given in line 3 of Listing \ref{lst:sig-icmp} where an attribute rule is written which matches all ICMP type 3 packets. As can be seen, the attribute rule starts with the keyword \emph{header}. Then the protocol is specified (which can be any of the ip-proto values mentioned above). Then one defines within the square brackets the offset and size in bytes separated by a colon. In the example, the value of byte position 0  (which indicates the ICMP type) is matched against the value 3. It must be noted that not every protocol defines values that fall perfectly within the space of bytes such as the ICMP type. For instance the TCP flags. 
+
+The TCP SYN flag is indicated by a single bit at bit position 111. To check whether this flag is set, one needs to compare the value of the entire byte where this flag is located in. An example of a signature which matches all TCP SYN packets is given in Listing \ref{lst:sig-tcp}. At rule 3 of this example, it is shown that byte position 13 (which corresponds to bit positions 105 up to and including 112) is compared to the value of 2. This means that this signature will only match whenever the SYN flag is set to 1 and all of the other bits (including one reserved bit) are set to 0. If one wants to write an attribute rule that matches whenever the SYN flag is set, and does not care about the values of the other flags, the rule has to contain $2^7$ entries. 
 
 
 \begin{lstlisting}[caption={Bro signature which matches all TCP SYN packets targeted at port 80}, label={lst:sig-tcp}]
@@ -110,7 +110,7 @@ signature icmp-type-3 {
 Both Listing \ref{lst:sig-icmp} and Listing \ref{lst:sig-tcp} illustrate in line 4 the \emph{event} keyword followed by a string. The Bro scripting language is event based. Scripts are defined to be executed whenever a certain event is triggered. One of the events defined in the language is the \emph{signature\_match} event. This event is triggered whenever a signature, which has an event defined in its body, is matched against a package. When this signature matches, the contents of the string is passed to the event listener, including various other parameters. For our experiment, we used one Bro script which can be found in Listing \ref{lst:bro-script}. The purpose of this script is to execute a python script whenever a signature match has occurred. The Bro script has some things to note. The first is the \emph{@load-sigs ./sig} line. This line is responsible for loading the signatures files. The second is the \emph{event signature\_match($\dots$)} line. This rule illustrates the event-driven programming script of Bro. Whenever a signature is matched, the contents defined within the curly brackets is executed. The \emph{msg} parameter is given string specified after the event keyword in the signature.  
 
   
-\begin{lstlisting}[caption={Bro script which executes whenever signature match occurs}, label={lst:bro-script}]
+\begin{lstlisting}[caption={Bro script which executes whenever signature match occurs}, label={lst:bro-script}, float=tp, floatplacement=tbp,]
 @load base/utils/exec
 @load-sigs ./sig
 
@@ -131,10 +131,11 @@ event signature_match(stage: signature_state, msg: string, data: string)
 
 
 
-\subsection{Methodology}\label{subsec:methodology}
-In this section, we discuss the experiment used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}. First, we explain the test setup. Second, we discuss the data used for the experiment. Third and lastly, we discuss the tools and commands used to run the experiment. 
+\section{Setup and Experiments}\label{subsec:methodology}
+In this section, we discuss the experiment used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}. The aim for this setup is to prove that it is possible to add Bro to a network without interfering the with the connected machines. In this setup we will use the knowledge presented in Section \ref{subsec:bro-rule-syntax} to automatically generate the signatures for 13 different attack vectors. First, we explain the test setup. Second, we discuss the data used for the experiment. Third and lastly, we discuss the tools and commands used to run the experiment. 
 
-For this research, we created a test setup which is schematically shown in Figure \ref{fig:test-setup}. This setup knows 4 actors. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. The fourth actor (4) is the target machine. The fifth and final actor (5) is the Bro machine: the machine that runs the Bro SIDS. The Bro machine receives all egress packets of the target machine. 
+%TODO generation of script
+For this research, we created a test setup which is depicted in Figure \ref{fig:test-setup}. There are four actors in our setup. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. When a port is mirrored to a different port, all data received and send through the first port is also sent towards the second port. The reason for using port mirroring is that it allows to funnel all data from different ports to one single port. One then can connect a machine to this port which runs Bro. This way of connecting allows receiving all data send and received to various machines to be copied to a single port. This yields that all data can be analyzed by a single machine without interfering with the other connected machines. The fourth actor (4) is the target machine. The fifth and final actor (5) is a machine that runs Bro. The Bro machine receives all egress packets of the target machine. 
 
 
 \begin{figure}[H]
@@ -173,7 +174,7 @@ To measure the response time of the Bro SIDS against an ongoing DDoS attack, fir
 
 
 
-\subsection{Evaluation and Discussion}\label{subsec:evaluation-discussion}
+\section{Evaluation and Discussion}\label{subsec:evaluation-discussion}
 In this section, we evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}. We start by discussing the hardware used for the test setup and elaborate on each of the measured data.
 
 In our first attempt at gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM running Ubuntu 18.04 LTS, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf, we measured a maximum bandwidth of 90 Mbps. When replaying an attack vector at this rate, the Pi could not cope with it. We then decided to turn down the replay speed and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a signature set consisting of one signature, is not suitable to run the Bro SIDS.  

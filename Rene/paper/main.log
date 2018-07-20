@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  6 JUL 2018 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.3.23)  18 JUL 2018 18:21
 entering extended mode
 **./main.tex
 (main.tex
@@ -1899,56 +1899,56 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 14.
 "
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<images/logo_header.png, id=66, 323.5287pt x 99.9735pt>
+<images/logo_header.png, id=64, 323.5287pt x 99.9735pt>
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 15.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [2 <./images/logo_header.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
 ) (sections/03_content.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 11.
+Package pdftex.def Info: images/logo_header.png  used on input line 5.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [3]
-<./images/ddos-overview.pdf, id=93, 791.95876pt x 353.32pt>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+<./images/ddos-overview.pdf, id=99, 791.95876pt x 353.32pt>
 File: ./images/ddos-overview.pdf Graphic file (type pdf)
 <use ./images/ddos-overview.pdf>
-Package pdftex.def Info: ./images/ddos-overview.pdf  used on input line 16.
+Package pdftex.def Info: ./images/ddos-overview.pdf  used on input line 14.
 (pdftex.def)             Requested size: 335.74254pt x 149.7897pt.
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 26.
+Package pdftex.def Info: images/logo_header.png  used on input line 17.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [4 <./images/ddos-overview.pdf
+ [4]
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 30.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+ [5 <./images/ddos-overview.pdf
 
 pdfTeX warning: pdflatex (file ./images/ddos-overview.pdf): PDF inclusion: inva
 lid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 44.
-(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [5]
-File: images/logo_header.png Graphic file (type png)
-<use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 79.
+Package pdftex.def Info: images/logo_header.png  used on input line 47.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [6]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 83.
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 97.
+Package pdftex.def Info: images/logo_header.png  used on input line 77.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [7]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 81.
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 119.
+Package pdftex.def Info: images/logo_header.png  used on input line 99.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [8]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 122.
@@ -1958,29 +1958,30 @@ LaTeX Font Info:    Try loading font information for TS1+pcr on input line 122.
 "
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-<./images/test-setup.pdf, id=196, 572.1375pt x 240.9pt>
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 137.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+ [9]
+<./images/test-setup.pdf, id=204, 572.1375pt x 240.9pt>
 File: ./images/test-setup.pdf Graphic file (type pdf)
 <use ./images/test-setup.pdf>
 Package pdftex.def Info: ./images/test-setup.pdf  used on input line 142.
 (pdftex.def)             Requested size: 335.74254pt x 141.36519pt.
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 145.
+Package pdftex.def Info: images/logo_header.png  used on input line 146.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [9]
-Overfull \hbox (17.865pt too wide) in paragraph at lines 151--167
- [][] 
- []
-
-File: images/logo_header.png Graphic file (type png)
-<use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 171.
-(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
-[10 <./images/test-setup.pdf
+ [10 <./images/test-setup.pdf
 
 pdfTeX warning: pdflatex (file ./images/test-setup.pdf): PDF inclusion: invalid
  other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
+Overfull \hbox (17.865pt too wide) in paragraph at lines 151--167
+ [][] 
+ []
+
+
 Overfull \hbox (6.76424pt too wide) in paragraph at lines 172--173
 \OT1/ptm/m/it/10 dstipmap=0.0.0.0/0:[target[]ip]/32 --enet-dmac=[target[]mac] -
 -infile=[supplied[]pcap]
@@ -1988,23 +1989,28 @@ Overfull \hbox (6.76424pt too wide) in paragraph at lines 172--173
 
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 182.
+Package pdftex.def Info: images/logo_header.png  used on input line 173.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
 [11]
 PGFPlots: reading {results/data-generation.txt}
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 216.
+Package pdftex.def Info: images/logo_header.png  used on input line 212.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
  [12]
+File: images/logo_header.png Graphic file (type png)
+<use images/logo_header.png>
+Package pdftex.def Info: images/logo_header.png  used on input line 219.
+(pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
+ [13]
 PGFPlots: reading {results/data-attacker-single-sigs.txt}
 PGFPlots: reading {results/data-attacker-all-sigs.txt}
 ) (sections/04_conclusion.tex
 File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
-Package pdftex.def Info: images/logo_header.png  used on input line 5.
+Package pdftex.def Info: images/logo_header.png  used on input line 7.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [13])
+ [14])
 Overfull \hbox (0.38445pt too wide) in paragraph at lines 11--35
 \OT1/ptm/m/n/10 needed for the test setup and en-abling us to gain ac-cess to t
 he data stored in DDoSDB.
@@ -2014,7 +2020,7 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 36.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
-[14] (main.bbl
+[15] (main.bbl
 Underfull \hbox (badness 3168) in paragraph at lines 4--9
 []\OT1/ptm/m/n/10 Cost of hourly down-time soars: 81% of en-ter-prises say it e
 x-ceeds
@@ -2037,39 +2043,52 @@ File: images/logo_header.png Graphic file (type png)
 <use images/logo_header.png>
 Package pdftex.def Info: images/logo_header.png  used on input line 40.
 (pdftex.def)             Requested size: 55.24597pt x 17.07182pt.
- [15]
+ [16]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D94B9EF7C3474278B10AE6870A373454;622.
+(rerunfilecheck)             Checksum: 90AEE6ECD7634808A482C09A03AFAA58;506.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 38032 strings out of 493305
- 870062 string characters out of 3128932
- 1213324 words of memory out of 3000000
- 40784 multiletter control sequences out of 15000+200000
+ 38040 strings out of 493305
+ 870134 string characters out of 3128932
+ 1215363 words of memory out of 3000000
+ 40785 multiletter control sequences out of 15000+200000
  30292 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,103p,1440b,2764s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
-nc}<C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Boschma/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Boschma/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
-sers/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy7.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/co
-urier/ucrr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/urw/times/utmb8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/urw/times/utmr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 260891 bytes).
+ 64i,16n,103p,1439b,2764s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{figure.caption.16} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.15} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.14} has been referenced but does not
+ exist, replaced by a fixed one
+
+{C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Boschma/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Boschma/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y7.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/cour
+ier/ucrr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+urw/times/utmb8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/urw/times/utmr8a.pfb><C:/Users/Boschma/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (16 pages, 266504 bytes).
 PDF statistics:
- 334 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 351 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 
