@@ -132,10 +132,11 @@ event signature_match(stage: signature_state, msg: string, data: string)
 
 
 \section{Setup and Experiments}\label{subsec:methodology}
-In this section, we discuss the experiment used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}. The aim for this setup is to prove that it is possible to add Bro to a network without interfering the with the connected machines. In this setup we will use the knowledge presented in Section \ref{subsec:bro-rule-syntax} to automatically generate the signatures for 13 different attack vectors. First, we explain the test setup. Second, we discuss the data used for the experiment. Third and lastly, we discuss the tools and commands used to run the experiment. 
+In this section, we discuss the experiment used to achieve the results presented and discussed in Section \ref{subsec:evaluation-discussion}. The aim for this setup is to prove that it is possible to add Bro to a network without interfering the with the connected machines. In this setup we will use the knowledge presented in Section \ref{subsec:bro-rule-syntax} to automatically generate the signatures for 13 different attack vectors. First, we explain how we implemented the automatic rule generation. Second, explain the test setup. Third, we discuss the data used for the experiment. fourth and lastly, we discuss the tools and commands used to run the experiment. 
 
-%TODO generation of script
-For this research, we created a test setup which is depicted in Figure \ref{fig:test-setup}. There are four actors in our setup. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. When a port is mirrored to a different port, all data received and send through the first port is also sent towards the second port. The reason for using port mirroring is that it allows to funnel all data from different ports to one single port. One then can connect a machine to this port which runs Bro. This way of connecting allows receiving all data send and received to various machines to be copied to a single port. This yields that all data can be analyzed by a single machine without interfering with the other connected machines. The fourth actor (4) is the target machine. The fifth and final actor (5) is a machine that runs Bro. The Bro machine receives all egress packets of the target machine. 
+For this research, we created a python script that takes as input a JSON fingerprint of an attack vector from DDoSDB. DDoSDB supplies both a summary in JSON format as the actual (semi-anonomyzed) attack in pcap format. DDoSDB obtains its data by directing DDoS attacks on themselves and capturing all data. After this, the attack is anonymized, analyzed and divided in the individual attack vectors after which they are put onto DDoSDB.org. The output of our script is a Bro signature. The python script is publicly available on GitHub\footnote{\url{TODO}}. 
+
+The test setup we created is depicted in Figure \ref{fig:test-setup}. There are four actors in our setup. The first actor (1) is the attacker. The second actor (2) is a router. The attacker is directly connected via cable to this router to not hinder any other networks. The third actor (3) is a switch that allows port mirroring. When a port is mirrored to a different port, all data received and send through the first port is also sent towards the second port. The reason for using port mirroring is that it allows to funnel all data from different ports to one single port. One then can connect a machine to this port which runs Bro. This way of connecting allows receiving all data send and received to various machines to be copied to a single port. This yields that all data can be analyzed by a single machine without interfering with the other connected machines. The fourth actor (4) is the target machine. The fifth and final actor (5) is a machine that runs Bro. The Bro machine receives all egress packets of the target machine. 
 
 
 \begin{figure}[H]
@@ -144,13 +145,13 @@ For this research, we created a test setup which is depicted in Figure \ref{fig:
 \caption{Schematic overview test setup}
 \end{figure}\label{fig:test-setup}
 
-For this research, we choose 13 attack vectors retrieved from DDoSDB to test against our setup. Each vector has a pcap file which contains only the data belonging to this vector extracted from a real attack. From this, DDoSDB generated a JSON file which describes the main characteristics of that vector. Each vector has been assigned a four-digit identifier to which we refer to in the remainder of this paper. A brief summary of each attack vector based on the received JSON file can be found in Table \ref{tab:json-summarry}.  
-
+For this research, we choose 13 attack vectors retrieved from DDoSDB to test against our setup.  Each vector has a pcap file which contains only the data belonging to a single attack vector extracted from a real attack. From each attack vector, DDoSDB makes available a JSON file which describes the main characteristics of that vector (called fingerprint). Each vector has been assigned a four-digit identifier to which we refer to in the remainder of this paper. The four-digit identifiers are the first four digits from the key value of each attack. Each attack can easily be retrieved from DDoSDB by using a wildcard (*) in the following query: \emph{('key: [ID]*')}. A brief summary of each attack vector based on the received JSON file can be found in Table \ref{tab:json-summarry}. For each vector the signature is generated on the Bro machine and is measured how long generation takes, depicted in Figure \ref{fig:generation-times}.   
 
 \begin{table}[H]
 \centering
+\small
 \begin{tabular}{l | l | l | l | l | l}
-ID & Type & \# src IPs & \# src ports & \# dst ports & special  \\ \hline \hline
+ID & Type & \# src IPs & \# src ports & \# dst ports & additional information  \\ \hline \hline
 e0b2 & ICMP & 83 & 0 & 0 & icmp\_type = 5 \\ \hline
 0292 & TCP & 6 & 1 & 1 & tcp\_flags = ··········S· \\ \hline
 dd26 & Chargen & 439 & 1 & 5 &  \\ \hline
@@ -168,20 +169,23 @@ c606 & TCP & 13452 & 12110 & 1 & tcp\_flags = ····CE····S· \\ \hline
 \caption{\label{tab:json-summarry}Attack charasterics}
 \end{table}
 
-A python script has been created that generates the signatures for the Bro SIDS. This script receives as input a JSON file received from DDoSDB and converts it to a valid Bro signature rule. Each attack vector has its own generated signature rule. For each vector the signature is generated on the Bro machine and is measured how long generation takes. The results of this can be found in Figure \ref{fig:generation-times}.
+%A python script has been created that generates the signatures for the Bro SIDS. This script receives as input a JSON file received from DDoSDB and converts it to a valid Bro signature rule. Each attack vector has its own generated signature rule. For each vector the signature is generated on the Bro machine and is measured how long generation takes. The results of this can be found in Figure \ref{fig:generation-times}.
 
-To measure the response time of the Bro SIDS against an ongoing DDoS attack, first, the maximum bandwidth of the target and Bro machines are determined. This is done using iperf3\footnote{\url{https://iperf.fr/}}. The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Second, the attacker will rewrite the destination IP and MAC-address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Third, Bro is started in bare mode with the written Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo bro -b -i [network\_device] [path\_script]}. Fourth, the attack against the target machine is launched using tcpreplay. The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fifth and lastly, when a signature match is received, the Bro machine will send a message to the attacker. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:attack-response-times}.
+To determine the response time of the Bro SIDS against an ongoing DDoS attack, first, it is crucial to determine the maximum network traffic the setup can handle. This is done using by executing a preliminary experiment. In this experiment we use the setup as described above and use iperf3\footnote{\url{https://iperf.fr/}} on both the attacker as other machines.  The attacker runs the script: \emph{iperf3 -s} and the other machine runs \emph{iperf3 -c [attacker\_ip] -R}. This way the server sends the data to the connecting machine. Times between 91.2 and 98.0 Mbps were measured. To be sure that the network would not hinder the performance of Bro, we decided to put the network limit on 90 Mbps. 
+
+\begin{sloppypar}
+To replay the attack vectors we first rewrite the destination IP and MAC-address of the supplied pcap using tcprewrite\footnote{\url{http://tcpreplay.synfin.net/}}. The command used is \emph{tcprewrite --dstipmap=0.0.0.0/0:[target\_ip]/32 --enet-dmac=[target\_mac] --infile=[supplied\_pcap] --outfile=attack.pcap}. Second, Bro is started in bare mode with the written Bro script described in Listing \ref{lst:bro-script}. This way only the needed files are loaded. The command used to start Bro is: \emph{sudo bro -b -i [network\_device] [path\_script]}. Third, the attack against the target machine is launched using tcpreplay (which is included in tcprewrite). The command used to launch the attack is: \emph{sudo tcpreplay -i [network\_device] --mbps=[speed\_limit] attack.pcap}. Fourth and lastly, when a signature match is received, the Bro machine will send a message to the attacker. The times it took of each attack between launching it and receiving the message are displayed in Figure \ref{fig:attack-response-times}.
+\end{sloppypar}
+
+In our first attempt at gathering results we used as the attacker a Lenovo Thinkpad W540 running Ubuntu 18.04 LTS, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. When replaying an attack vector at 90 Mbps, the Pi could not cope with it. We then decided to turn down the replay speed and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a signature set consisting of one signature, is not suitable to run the Bro SIDS. We then switched to using the attacking laptop as Bro machine and as attacker a Dell m2800 running Ubuntu 16.04. We again used iperf3 to measure the bandwidth that could be accomplished. This yielded the same results as before.
 
 
 
 \section{Evaluation and Discussion}\label{subsec:evaluation-discussion}
-In this section, we evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}. We start by discussing the hardware used for the test setup and elaborate on each of the measured data.
+In this section, we evaluate and discuss our findings we found by executing the methodology described in Section \ref{subsec:methodology}.
 
-In our first attempt at gathering results we used as the attacker a laptop with Intel i7-4700MQ @ 2.4 GHz with 8 GB of RAM running Ubuntu 18.04 LTS, as router the D-Link DIR-605L, as switch the tp-link TL-SG105E, as target machine a Raspberry Pi 2 and as Bro machine a Raspberry Pi 3 Model B. From iperf, we measured a maximum bandwidth of 90 Mbps. When replaying an attack vector at this rate, the Pi could not cope with it. We then decided to turn down the replay speed and concluded that even at a speed of 1 Mbps the Pi could not handle every attack. Therefore we concluded that a Pi, even for a signature set consisting of one signature, is not suitable to run the Bro SIDS.  
+Every measurement is executed 10 times. From this, the average and standard deviation are calculated. The first measurement performed is the time required to generate the Bro rules from the supplied JSON signatures. The results are shown in Figure \ref{fig:generation-times}. This figure shows average time it took in seconds to generate the signature on the Bro machine for each attack vector. Due to the small standard deviation, it is not possible to see it in the plot. As can be observed, the vectors e6ee, 072a and 39b6 took considerable more time than the other vectors. When we combine this data with Figure \ref{fig:generation-times} we observe that there is a strong correlation between the number of fields and the time it takes to generate the figure. We suspect that the reason that 39b6 generates faster than e6ee and 072a while it has more fields is due to that the special field of TCP takes less time to generate than the one of the DNS. More research is needed to confirm this hypothesis.  
 
-We then switched to using the attacking laptop as Bro machine and as attacker a different laptop. We again used iperf3 to measure the bandwidth that could be accomplished. This measured 90 Mbps.  
-
-Several measurements were done during the experiment. Every measurement is executed 10 times. The first measurement performed is the time required to generate the Bro rules from the supplied JSON signatures. The results are shown in Figure \ref{fig:generation-times}. This figure shows the time it took in seconds to generate the signature on the Bro machine for each attack vector. As can be observed, the vectors e6ee, 072a and 39b6 took considerable more time than the other vectors. When combining this data with Table \ref{tab:attack-overview} we can conclude that the generation time grows with the number of entries.
 
 \pgfplotstableset{
     create on use/mean/.style={create col/mean},
@@ -191,7 +195,32 @@ Several measurements were done during the experiment. Every measurement is execu
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}
+\begin{subfigure}[b]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[yscale=0.65, xscale=0.65]
+  \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Number of fields}, yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/precision=0
+}, scaled y ticks=false, title={Total number of fields},title style={xshift=1.5em, yshift=-1.5ex}]
+    \addplot+[only marks, 
+            error bars/.cd,
+        y dir=both,
+        y explicit
+    ]
+    table[
+            x=Sample,
+            y=m1
+    ]
+    {results/data-number-fields.txt};
+  \end{axis}
+\end{tikzpicture}
+\caption{Number of fields}\label{fig:number-of-fields}
+\end{subfigure}%
+\begin{subfigure}[b]{0.5\linewidth}
+\centering
+\centering
+\begin{tikzpicture}[yscale=0.65, xscale=0.65]
   \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
 xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Bro Rule Generation Times},title style={xshift=1.5em, yshift=-1.5ex}]
     \addplot+[only marks, 
@@ -207,17 +236,19 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
     {results/data-generation.txt};
   \end{axis}
 \end{tikzpicture}
-\caption{Bro Rule Generation Times}
-\label{fig:generation-times}
+\caption{Bro Rule Generation Times}\label{fig:generation-times}
+\end{subfigure}
+\caption{Number of fields (left) and time it took to generate the signature (right)}
 \end{figure}
 
-The second measurement performed is the time it takes to send a message from the Bro machine to the attacker. The time measurement includes setting up a TCP connection, sending a message and then closing the connection. The average of these measurements was 8.41E-5 seconds with a standard error of 1.29E-5 seconds. 
 
-The third and final measurement performed is the time it took for the Bro machine to react to an incoming attack. The results of these measurements are shown in Figure \ref{fig:attack-response-times}. This measurement is executed in two variants. The first variant is shown in Figure \ref{fig:attack-response-times-single} and pictures the response times when every attack vector has its own signature loaded in the Bro machine. The second variant shown in Figure \ref{fig:attack-response-times-all} pictures the response times when all attack vector's signatures are loaded. 
+The second measurement performed is the time it takes to send a message from the Bro machine to the attacker. We choose to let the Bro machine send a message to the attacker as this way the attack could be stopped when detection took place. The time measurement includes setting up a TCP connection, sending a message and then closing the connection. The average of these measurements was 0.0841 milliseconds with a standard deviation of 0.0129 milliseconds.  
 
-In Figure \ref{fig:attack-response-times-single} we observe that one vector, 39b6, takes less time than the other vectors. It is, however, visible that this measurement has quite a large variance compared to the other ones and might be that the reason for its speed is due to irregularities in the test setup. Furthermore, vectors 8219 and 13c4 take significantly longer to detect than the other attack vectors. It is interesting to note that both attack vectors are UDP attacks. One would more likely expect that the DNS attack vector would take longer to detect due to the fact that regex matching needs to be done against a packet's payload. Furthermore, the DNS attack vector e6ee has also more source IPs and destination ports to match against than both the UDP attacks. 
+The third and final measurement performed is the time it took for the Bro machine to react to an incoming attack. The results of these measurements are shown in Figure \ref{fig:attack-response-times}. This measurement is executed in two variants. The first variant is shown in Figure \ref{fig:attack-response-times-single} and pictures the response times when every attack vector has only its own signature active in the Bro machine. The second variant shown in Figure \ref{fig:attack-response-times-all} pictures the response times when all attack vector's signatures are active. 
 
-In Figure \ref{fig:attack-response-times-all} we observe that Bro does not increase significantly for all attack vectors. For most of the vectors, the times roughly stay the same. Most interesting are the increases in 072a and e0b2. Especially the latter as it increased by more than 2.5 times the time it took with only a single signature. Our initial guess was that this might be due to the order in which the rules were listed in the signature file. The order in the file was e0b2, 0292, dd26, e6ee, 54a7, 8219, 39b6, 13c4, c606, 7bf0, 151e, 9d61, 072a. From this, we conclude that the order is not what causes the increase in response time.  
+In Figure \ref{fig:attack-response-times-single} we observe that one vector, 39b6, takes less time than the other vectors. It is, however, visible that this measurement has quite a large variance compared to the other ones and might be that the reason for its speed is due to irregularities in the test setup. Furthermore, vectors 8219 and 13c4 take significantly longer to detect than the other attack vectors. It is interesting to note that both attack vectors are UDP attacks. One would more likely expect that the DNS attack vector would take longer to detect due to the fact that regex matching needs to be done against a packet's payload. Furthermore, the DNS attack vector e6ee has also more source IPs and destination ports to match against than both the UDP attacks. Reasons explaining this could be that Bro has a harder time dealing with these types of packets or that certain types of packets take longer to send in the network. Due to time constraints we could not investigate this further.  
+
+In Figure \ref{fig:attack-response-times-all} we observe that Bro does not increase significantly for all attack vectors. For most of the vectors, the times roughly stay the same. Most interesting are the increases in 072a and e0b2. Especially the latter as it increased by more than 2.5 times the time it took with only a single signature. One of the reasons for this increase is that this might be due to the order in which the rules were listed in the signature file. The order in the file was e0b2, 0292, dd26, e6ee, 54a7, 8219, 39b6, 13c4, c606, 7bf0, 151e, 9d61, 072a. As can be seen e0b2 and 072a both have an significant increase whereas not all others do. From this, we conclude that the order is not what causes the increase in response time. We are unsure what causes the increase in response time and more research should be done on this point.  
 
 \begin{figure}[H]
 \centering
@@ -225,7 +256,7 @@ In Figure \ref{fig:attack-response-times-all} we observe that Bro does not incre
 \centering
 \begin{tikzpicture}[yscale=0.7, xscale=0.7]
   \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
-xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times Single Signature},title style={xshift=1.5em, yshift=-1.5ex}]
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times Single Signature},title style={xshift=1.5em, yshift=-1.5ex}, ymax=0.0007]
     \addplot+[only marks, 
             error bars/.cd,
         y dir=both,
@@ -239,13 +270,13 @@ xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, d
     {results/data-attacker-single-sigs.txt};
   \end{axis}
 \end{tikzpicture}
-\caption{Single Signatures}\label{fig:attack-response-times-single}
+\caption{Single signatures}\label{fig:attack-response-times-single}
 \end{subfigure}%
 \begin{subfigure}[b]{0.5\linewidth}
 \centering
 \begin{tikzpicture}[yscale=0.7, xscale=0.7]
   \begin{axis}[xticklabel style={rotate=90}, symbolic x coords={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4},
-xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times All Signature},title style={xshift=1.5em, yshift=-1.5ex}]
+xtick={7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4, dd26, 7bf0, 8219, c606, e6ee, 072a, e0b2, 9d61, 54a7, 151e, 0292, 39b6, 13c4}, xticklabel style={text height=2ex}, xlabel={Attack Identifier}, ylabel={Time in seconds}, title={Response Times All Signature},title style={xshift=1.5em, yshift=-1.5ex}, ymax=0.0007]
     \addplot+[only marks, 
             error bars/.cd,
         y dir=both,
