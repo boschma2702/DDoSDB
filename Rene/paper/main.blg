@@ -1,8 +1,16 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-I couldn't open style file simple.bst
----line 90 of file main.aux
- : \bibstyle{simple
- :                 }
-I'm skipping whatever remains of this command
-I found no style file---while reading file main.aux
-(There were 2 error messages)
+The style file: plain.bst
+Database file #1: ./references.bib
+Warning--to sort, need author or key in ITIC2016
+Warning--empty journal in forrester2018
+Warning--empty journal in ietf1995
+Warning--empty journal in Akamai2016
+Warning--empty journal in Akamai2017
+Warning--empty journal in Akamai2017-4
+Warning--empty journal in imperva
+Warning--empty year in imperva
+Warning--empty journal in ietf1983
+Warning--there's a number but no volume in Lin2013
+Warning--empty journal in europol2015
+Warning--empty journal in Arbor2014
+(There were 12 warnings)
