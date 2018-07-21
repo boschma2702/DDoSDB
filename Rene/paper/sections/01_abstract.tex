@@ -1,4 +1,7 @@
 % You should not remove this section
 \section*{Abstract}
 \label{section:abstract}
-\lipsum[1]
+A Distributed Denial of Service (DDoS) attack aims to disable services of a target system using multiple machines. As the number of attacks increase and downtime costs are exceeding on
+average \$300K per hour [1] a need for an efficient and effective mitigation method has become crucial. Our hypothesis is that Signature-based Intrusion Detection system is a suitable system that can detect DDoS attacks when their downside of keeping an up-to-date signature list is tackled. In this paper, we will implement automatic signature generation for Bro. We will test these signatures by replaying various DDoS attack vectors retrieved from DDoSDB against a common network architecture.  
+
+In this paper, we show that it is possible for the selected attack vectors to automatically generate Bro signature within 4.2 milliseconds. Also that Bro is capable of detecting and responding to all attacks within 0.31 milliseconds when only one signature is active and within 0.7 milliseconds with all our generated signatures.
